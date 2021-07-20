@@ -1,4 +1,4 @@
--- MoonBuyers SQL Definition file Moonbuyers-definition.sql
+-- MoonBuyers SQL Definition file MoonBuyers-definition.sql
 -- CAUTION - running or importing this file with queries in CAUTION block will cause all existing data to be lost.
 
 -- ********** CAUTION!!! ******************
@@ -22,6 +22,7 @@
 -- Addr_2	Customer's address line 2, 30 characters max.
 -- City		Customer's City, not null, 25 characters max.
 -- State	Customer's State, not null, 2 characters max.
+-- Planet	Customer's Planet, not null, 25 charcaters max.
 -- Zip		Customer's zip code, not null.
 -- Phone	Customer's phone number, not null.
 
@@ -33,6 +34,7 @@ CREATE TABLE Customers (
 	Addr_2 VARCHAR(30),
 	City VARCHAR(25) NOT NULL,
 	State VARCHAR(2) NOT NULL,
+	Planet VARCHAR(25) NOT NULL,
 	Zip INT UNSIGNED NOT NULL,
 	Phone BIGINT UNSIGNED NOT NULL
 )ENGINE=InnoDB AUTO_INCREMENT = 200000;
@@ -60,11 +62,11 @@ CREATE TABLE Account (
 
 CREATE TABLE Asset (
 	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	Name VARCHAR(25) NOT NULL,
 	Description VARCHAR(255) NOT NULL,
-	Carrot DECIMAL(7,4) NOT NULL,
-	Cut VARCHAR(10) NOT NULL,
-	Clarity VARCHAR(5) NOT NULL,
-	Color CHAR NOT NULL,
+	Mass DECIMAL(10, 2) NOT NULL,
+	Density DECIMAL(10, 2)) NOT NULL,
+	ApMag DECIMAL(5,3) NOT NULL,
 	Create_Date DATE NOT NULL,
 	Owned_By INT
 )ENGINE=InnoDB AUTO_INCREMENT = 500000;
@@ -127,7 +129,7 @@ CREATE TABLE Contract_Asset (
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- Citations (applies to this file, Moonbuyers-initialData.sql, and Moonbuyers-queries.sql.
+-- Useful References: (applies to this file, Moonbuyers-initialData.sql, and Moonbuyers-queries.sql.
 -- [1] http://stackoverflow.com/questions/2300396/force-drop-mysql-bypassing-foreign-key-constraint
 -- [2] http://stackoverflow.com/questions/3837990/last-insert-id-mysql
 -- [3] http://stackoverflow.com/questions/14772762/mysql-multiple-table-locks
