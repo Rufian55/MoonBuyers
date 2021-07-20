@@ -1,11 +1,12 @@
--- Blockchain Local Node Inital Data Load file Blockchain-InitialData.sql
--- Data initailly loaded into database for testing purposes.
+-- MoonBuyers Inital Data Load SQL file MoonBuyers-initialData.sql
+-- Data initially loaded into database for testing purposes.
 
-INSERT INTO Customers (Lname, Fname, Addr_1, Addr_2, City, State, Zip, Phone)
+INSERT INTO Customers (Lname, Fname, Addr_1, Addr_2, City, State, Planet, Zip, Phone)
 VALUES
-('Buyers Inc.', 'Buy Account', '1 Easy St.', 'Top Floor', 'New York', 'NY', 10019, 2125551000),
-('Buyers Inc.', 'Sell Account', '1 Easy St.', 'Top Floor', 'New York', 'NY', 10019, 2125551000),
-('Kearns', 'Chris', '100 Bluff View Dr', 'Apt. 302B', 'Largo', 'FL', 33770, 7275551234),
+('LLC', 'RigidBody Tech Buy', '55 Liberty St.', 'Top Floor', 'New York', 'NY', 100193422, 12125551000),
+('LLC', 'RigidBody Tech Sell', '55 Liberty St.', 'Top Floor', 'New York', 'NY', 100193422, 12125551000),
+('Kearns', 'Chris', '300 Bluff View Dr', 'Main House', 'St. Petersburg', 'FL', 337705433, 17275551234),
+
 ('Smith', 'Jane', '123 Elm St.', NULL, 'Bentonville', 'AK', 325421111, 4561234578),
 ('Jones', 'Samual', '22 Nardo Ave.', 'Apt 15', 'San Francisco', 'CA', 998740000, 8546524512),
 ('Denton', 'Peter', '7524 Slimner Way', NULL, 'Boise', 'ID', 84125, 2548547458),
