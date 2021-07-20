@@ -1,4 +1,4 @@
--- Blockchain Local Node Definition file Blockchain-definition.sql
+-- MoonBuyers SQL Definition file Moonbuyers-definition.sql
 -- CAUTION - running or importing this file with queries in CAUTION block will cause all existing data to be lost.
 
 -- ********** CAUTION!!! ******************
@@ -127,7 +127,7 @@ CREATE TABLE Contract_Asset (
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- Citations (applies to this file, Blockchain-initialData.sql, and Blockchain-queries.sql.
+-- Citations (applies to this file, Moonbuyers-initialData.sql, and Moonbuyers-queries.sql.
 -- [1] http://stackoverflow.com/questions/2300396/force-drop-mysql-bypassing-foreign-key-constraint
 -- [2] http://stackoverflow.com/questions/3837990/last-insert-id-mysql
 -- [3] http://stackoverflow.com/questions/14772762/mysql-multiple-table-locks
