@@ -79,7 +79,7 @@ $mysqli = new mysqli($servername, $username, $password, $database);
 				}
 
 				/* Bind Parameters for INSERT new Asset's details. */
-				if(!($stmt->bind_param("sdssssi", $_POST['Name'], $_POST['Descr'], $_POST['Radius'], $_POST['Mass'], $_POST['ApMag'], $_POST['cDate'], $_POST['Owned_By']))) {
+				if(!($stmt->bind_param("ssdddsi", $_POST['Name'], $_POST['Descr'], $_POST['Radius'], $_POST['Mass'], $_POST['ApMag'], $_POST['cDate'], $_POST['Owned_By']))) {
 					echo "<p class=\"error\">Bind failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 				}
 
