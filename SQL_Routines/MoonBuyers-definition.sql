@@ -58,8 +58,8 @@ CREATE TABLE Account (
 -- id			Auto incrementing integer which is the primary key and starts (arbitrarily) at 500,000.
 -- Name			Celestial body name.
 -- Description	Description of the asset.
+-- Radius		Kilometers.
 -- Mass 		10^21 Kilos.
--- Density		Grams / cubic centimeter.
 -- ApMag 		Apperent Magnitude from Earth Observer range [-30 to +30].
 -- Create_Date	Date and time the asset was entered into the "Asset" table.
 -- Owned_By 	Account number of owner.
@@ -68,8 +68,8 @@ CREATE TABLE Asset (
 	id BIGINT AUTO_INCREMENT PRIMARY KEY,
 	Name VARCHAR(25) NOT NULL,
 	Description VARCHAR(255) NOT NULL,
+	Radius DECIMAL(10,2)) NOT NULL,
 	Mass DECIMAL(10,2) NOT NULL,
-	Density DECIMAL(10,2)) NOT NULL,
 	ApMag DECIMAL(5,3) NOT NULL,
 	Create_Date DATE NOT NULL,
 	Owned_By INT

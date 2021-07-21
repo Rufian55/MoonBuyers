@@ -1,33 +1,33 @@
--- BlockChain Queries file Blockchain-queries.sql
+-- Moonbuyers Queries file MoonBuyers-queries.sql
 -- ******DO NOT IMPORT THIS FILE. FOR REFERENCE ONLY.********
 -- Cut and paste queries to phpMyAdmin as needed for testing.
 
 -- Select accoount details and balance for all accounts.
-SELECT A.id AS Account, A.Balance, Cu.id AS 'Cust_ID', Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Zip, Cu.Phone 
+SELECT A.id AS Account, A.Balance, Cu.id AS 'Cust_ID', Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Planet, Cu.Zip, Cu.Phone 
 FROM Customers Cu
 INNER JOIN Account A
 ON Cu.id = A.C_ID;
 
 -- Select account details and balance for account by account id.
-SELECT A.id AS 'Account', A.Balance, Cu.id AS 'Cust_ID', Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Zip, Cu.Phone 
+SELECT A.id AS 'Account', A.Balance, Cu.id AS 'Cust_ID', Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Planet, Cu.Zip, Cu.Phone 
 FROM Customers Cu
 INNER JOIN Account A
 ON Cu.id = A.C_ID
 WHERE A.id = 396402;
 
 -- Select account details and balance for account by customer id.
-SELECT Cu.id, A.id AS Account, A.Balance, Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Zip, Cu.Phone 
+SELECT Cu.id, A.id AS Account, A.Balance, Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Planet, Cu.Zip, Cu.Phone 
 FROM Customers Cu
 INNER JOIN Account A
 ON Cu.id = A.C_ID
 WHERE Cu.id = 200004;
 
 -- Select account details and balance for account by customer phone.
-SELECT Cu.id AS Cust_ID, A.id AS 'Account #', A.Balance, Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Zip, Cu.Phone 
+SELECT Cu.id AS Cust_ID, A.id AS 'Account #', A.Balance, Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Planet, Cu.Zip, Cu.Phone 
 FROM Customers Cu
 INNER JOIN Account A
 ON Cu.id = A.C_ID
-WHERE Cu.phone = 7275551234;
+WHERE Cu.phone = 37275056243;
 
 -- Record a BlockChain Transaction.
 LOCK TABLES Ledger WRITE, Contract WRITE, Contract_Asset WRITE, Contract_Customers WRITE, Asset WRITE;
