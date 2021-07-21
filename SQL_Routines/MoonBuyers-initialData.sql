@@ -1,18 +1,20 @@
 -- MoonBuyers Inital Data Load SQL file MoonBuyers-initialData.sql
 -- Data initially loaded into database for testing purposes.
 
+
 INSERT INTO Customers (Lname, Fname, Addr_1, Addr_2, City, State, Planet, Zip, Phone)
 VALUES
-('LLC', 'RigidBody Tech Buy', '55 Liberty St.', 'Top Floor', 'New York', 'NY', 100193422, 12125551000),
-('LLC', 'RigidBody Tech Sell', '55 Liberty St.', 'Top Floor', 'New York', 'NY', 100193422, 12125551000),
-('Kearns', 'Chris', '300 Bluff View Dr', 'Main House', 'St. Petersburg', 'FL', 337705433, 17275551234),
-
-('Smith', 'Jane', '123 Elm St.', NULL, 'Bentonville', 'AK', 325421111, 4561234578),
-('Jones', 'Samual', '22 Nardo Ave.', 'Apt 15', 'San Francisco', 'CA', 998740000, 8546524512),
-('Denton', 'Peter', '7524 Slimner Way', NULL, 'Boise', 'ID', 84125, 2548547458),
-('Venudette', 'Sally', '17 Main St.', 'Unit 1A', 'Atlanta', 'GA', 65421, 4501215555),
-('Napoli', 'Anna', '4574 West 51st St.', NULL, 'Cleveland', 'OH', 33547, 6745551212),
-('Christian', 'Szell', '23 Hideaway Ln.', 'Apt. 13', 'New York', 'NY', '10019', '2125557540');
+('LLC', 'RigidBody Tech', '55 Liberty St.', 'Top Floor', 'New York', 'NY', 'Earth', 100193422, 22125551000),
+('LLC', 'RigidBody Tech', '55 Liberty St.', 'Top Floor', 'New York', 'NY', 'Earth', 100193422, 22125551000),
+('Inc.', 'Metal Miners', '30 Mariner Trench', 'North 6', 'New Terra', 'MR', 'Mars', 337705433, 37275056243),
+('Pvt. Ltd.', 'Hydrogen', '4 Hydrogen Way', 'Jovian Level', 'New Io City', 'IO', 'Io', 47403383, 4747553894),
+('Corp.', 'Paralaxix', 'B-Ring', 'Apogee Point 54', 'Orbital H', 'SA', 'Saturn', 505433, 549256547783),
+('Inc.', 'Deep Space', 'Ring 4', 'Floater 4R', 'Uranus Sys', 'UR', 'Uranus', 606893, 6584359765),
+('Inc.', 'Belt Harvest', 'Ceres Station', 'Level 8', 'New Patagonia', 'CE', 'Ceres', 4540890, 5124548723197),
+('Corp.', 'Outer Rim', 'Pluto Biodome C', 'Upper Level', 'Ice City', 'PL', 'Pluto', 97708205535, 993561724324),
+('Ltd.', 'Belted', '1 Eros', 'Level 1', 'Spin Zone', 'ER', 'Eros', 587030178, 5294856),
+('LLC', 'Excavat Ice', 'Zone 5', 'Submersible 7H', 'Ru', 'EC', 'Enceladus', 66052883, 672753558990),
+('Inc.', 'Launcher', 'Biodome A', 'Main Level', 'Huygens', 'TI', 'Titan', 837705433, 8727548390112);
 
 INSERT INTO Account (C_ID, Balance)
 VALUES
@@ -20,11 +22,13 @@ VALUES
 ((SELECT id FROM Customers WHERE id = 200001), 1000000.00),
 ((SELECT id FROM Customers WHERE id = 200002), 234567.90),
 ((SELECT id FROM Customers WHERE id = 200003), 3234557.40),
-((SELECT id FROM Customers WHERE id = 200004), 133457),
-((SELECT id FROM Customers WHERE id = 200005), 4567.01),
+((SELECT id FROM Customers WHERE id = 200004), 4133457),
+((SELECT id FROM Customers WHERE id = 200005), 54567.01),
 ((SELECT id FROM Customers WHERE id = 200006), 7234567.22),
-((SELECT id FROM Customers WHERE id = 200007), 234467.02),
-((SELECT id FROM Customers WHERE id = 200008), 905245.00);
+((SELECT id FROM Customers WHERE id = 200007), 2534467.02),
+((SELECT id FROM Customers WHERE id = 200008), 105245.00),
+((SELECT id FROM Customers WHERE id = 200009), 4569204.50),
+((SELECT id FROM Customers WHERE id = 200010), 905245.00);
 
 INSERT INTO Asset (Description, Carrot, Cut, Clarity, Color, Create_Date)
 VALUES
