@@ -1,6 +1,6 @@
 -- Moonbuyers Queries file MoonBuyers-queries.sql
 -- ******DO NOT IMPORT THIS FILE. FOR REFERENCE ONLY.********
--- Cut and paste queries to phpMyAdmin as needed for testing.
+-- Cut and paste queries to phpMyAdmin or CL as needed for testing.
 
 -- Select accoount details and balance for all accounts.
 SELECT A.id AS Account, A.Balance, Cu.id AS 'Cust_ID', Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Planet, Cu.Zip, Cu.Phone 
@@ -29,7 +29,7 @@ INNER JOIN Account A
 ON Cu.id = A.C_ID
 WHERE Cu.phone = 37275056243;
 
--- Record a BlockChain Transaction.
+-- Record a Moonbuyers Transaction.
 LOCK TABLES Ledger WRITE, Contract WRITE, Contract_Asset WRITE, Contract_Customers WRITE, Asset WRITE;
 INSERT INTO Ledger(date_time) VALUES (NOW());
 SET @last_id_in_Ledger = LAST_INSERT_ID();
@@ -38,7 +38,7 @@ INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd
 	500004,
 	396402,
 	396404,
-	'2016-07-23 14:09:20',
+	NOW(),
 	17000.20,
 	4500.00,
 	@last_id_in_Ledger
@@ -80,37 +80,38 @@ ORDER BY Asset.id DESC;
 
 -- Total Transactions and Commisions Paid by DateTime
 SELECT SUM(Trans_at) AS 'Contracted', SUM(Com_pd) AS 'Total Commissions' FROM Contract
-WHERE Eff_Date > '2011-11-11 00:00:00' AND Eff_Date < '2016-07-24 00:00:00';
+WHERE Eff_Date > '3010-01-01 00:00:00' AND Eff_Date < '3021-07-21 00:00:00';
 
 -- Add New Customer and Account.
 LOCK TABLES Customers WRITE, Account WRITE;
-INSERT INTO Customers (Lname, Fname, Addr_1, Addr_2, City, State, Zip, Phone)
+INSERT INTO Customers (Lname, Fname, Addr_1, Addr_2, City, State, Planet, Zip, Phone)
 VALUES
-('Szell', 'Christian', '23 Hideaway Ln.', 'Apt. 13', 'New York', 'NY', 10019, 2125557541);
+('LLC', 'Gasperia', '3 Biodome L', 'Lower Level 13', 'Venus 12', 'VS', 'Venus', 12323019, 221242753481);
 SET @last_id_in_Customers = LAST_INSERT_ID();
 INSERT INTO Account (C_ID, Balance)
 VALUES
-(@last_id_in_Customers, 905245);
+(@last_id_in_Customers, 995245);
 UNLOCK TABLES;
 
 -- Add New Asset.
-INSERT INTO Asset (Description, Carrot, Cut, Clarity, Color, Create_Date, Owned_By)
+INSERT INTO Asset (Name, Description, Radius, Mass,	ApMag, Create_Date, Owned_By)
 VALUES
-('Diamond', 2.55, 'Princess', 'V1', 'E', '2016-07-22 13:39:39', 369400);
+('Himalia', 'AKA Jupitor VI', 85.01, 4.26, -15.584, '3021-07-20 13:39:39', 369400);
 
--- Update Customers
+-- Update Customers Account Details.
+-- Was ('Corp.', 'Paralaxix', 'B-Ring', 'Apogee Point 54', 'Orbital H', 'SA', 'Saturn', 505433, 549256547783)
 UPDATE Customers
-SET Lname = 'Jones',
-Fname = 'Samuel',
-Addr_1 = '23 Nardo Ave.',
-Addr_2 = 'Apt 16',
-City = 'San Jose',
-State = 'CA',
-Zip = 998690000,
-Phone = 8546524512
+SET Lname = 'LLC',
+Fname = 'Paralax',
+Addr_1 = 'C-Ring',
+Addr_2 = 'Apogee Point 54',
+City = 'Orbital I',
+State = 'SA',
+Zip = 505434,
+Phone = 549256547784
 WHERE Customers.id = 200004;
 
--- Record a BlockChain Transaction  with full balance adjustments.
+-- Record a Moonbuyers Transaction with full balance adjustments.
 LOCK TABLES Ledger WRITE, Contract WRITE, Contract_Asset WRITE, Contract_Customers WRITE, Asset WRITE, Account WRITE;
 INSERT INTO Ledger(date_time) VALUES (NOW());
 SET @last_id_in_Ledger = LAST_INSERT_ID();
@@ -119,9 +120,9 @@ INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd
 	500008,
 	396405,
 	396407,
-	'2016-07-23 14:09:20',
-	1000.69,
-	100.00,
+	'3021-07-20 14:09:20',
+	51000.69,
+	5100.00,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -135,8 +136,8 @@ INSERT INTO Contract_Customers VALUES(
 	@last_id_in_Contract,
 	200007);
 UPDATE Asset SET Owned_By = 396405 WHERE Asset.id = 500008;
-UPDATE Account SET Balance = Balance - (1000.69 + 100.00/2) WHERE id = 396405;
-UPDATE Account SET Balance = Balance + (1000.69 - 100.00/2) WHERE id = 396407;
+UPDATE Account SET Balance = Balance - (51000.69 + 5100.00/2) WHERE id = 396405;
+UPDATE Account SET Balance = Balance + (51000.69 - 5100.00/2) WHERE id = 396407;
 UNLOCK TABLES;
 
 -- General Ledger query.

@@ -86,17 +86,18 @@ VALUES
 
 -- Compound Queries for all tables population of the 50 MoonBuyers Assets to account owner RigidBody Tech LLC.
 LOCK TABLES Ledger WRITE, Contract WRITE, Contract_Asset WRITE, Contract_Customers WRITE, Asset WRITE;
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-10-21 11:12:13');
+
+-- Ganymede.
+INSERT INTO Ledger(date_time) VALUES ('3011-10-21 11:12:13');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500000,
 	396400,
 	396401,
-	'2011-10-21 11:12:13',
-	1750.00,
-	25.00,
+	'3011-10-21 11:12:13',
+	11750.00,
+	1235.00,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -111,17 +112,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500000;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-09-01 12:13:14');
+-- Titan.
+INSERT INTO Ledger(date_time) VALUES ('3011-09-01 12:13:14');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500001,
 	396400,
 	396401,
-	'2011-09-01 12:13:14',
+	'3011-09-01 12:13:14',
 	13680.00,
-	130.00,
+	1370.50,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -136,17 +137,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500001;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-07-05 08:21:31');
+-- Calisto.
+INSERT INTO Ledger(date_time) VALUES ('3011-07-05 08:21:31');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500002,
 	396400,
 	396401,
-	'2011-07-05 08:21:31',
+	'3011-07-05 08:21:31',
 	17525.00,
-	175.99,
+	1753.99,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -161,17 +162,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500002;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-08-15 12:10:09');
+-- Io.
+INSERT INTO Ledger(date_time) VALUES ('3011-08-15 12:10:09');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500003,
 	396400,
 	396401,
-	'2011-08-15 12:10:09',
+	'3011-08-15 12:10:09',
 	75100.35,
-	750.00,
+	7500.00,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -186,17 +187,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500003;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-08-09 11:09:07');
+-- Luna.
+INSERT INTO Ledger(date_time) VALUES ('3011-08-09 11:09:07');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500004,
 	396400,
 	396401,
-	'2011-08-09 11:09:07',
+	'3011-08-09 11:09:07',
 	55000.00,
-	1000.00,
+	5100.00,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -211,17 +212,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500004;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-12-12 12:09:06');
+-- Europa.
+INSERT INTO Ledger(date_time) VALUES ('3011-12-12 12:09:06');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500005,
 	396400,
 	396401,
-	'2011-12-12 12:09:06',
+	'3011-12-12 12:09:06',
 	8510.00,
-	90.50,
+	890.50,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -236,17 +237,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500005;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-06-06 18:15:12');
+-- Triton.
+INSERT INTO Ledger(date_time) VALUES ('3011-06-06 18:15:12');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500006,
 	396400,
 	396401,
-	'2011-06-06 18:15:12',
+	'3011-06-06 18:15:12',
 	7501.05,
-	100.10,
+	7100.10,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -261,17 +262,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500006;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-09-02 11:01:02');
+-- Eris
+INSERT INTO Ledger(date_time) VALUES ('3011-09-02 11:01:02');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500007,
 	396400,
 	396401,
-	'2011-09-02 11:01:02',
+	'3011-09-02 11:01:02',
 	8850.00,
-	180.00,
+	8180.00,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -286,17 +287,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500007;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-10-10 10:09:08');
+-- Haumea.
+INSERT INTO Ledger(date_time) VALUES ('3011-10-10 10:09:08');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500008,
 	396400,
 	396401,
-	'2011-10-10 10:09:08',
+	'3011-10-10 10:09:08',
 	30000.00,
-	1200.00,
+	2200.00,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -311,17 +312,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500008;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-07-08 07:30:33');
+-- Titania.
+INSERT INTO Ledger(date_time) VALUES ('3011-07-08 07:30:33');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500009,
 	396400,
 	396401,
-	'2011-07-08 07:30:33',
-	4500.00,
-	225.00,
+	'3011-07-08 07:30:33',
+	44500.00,
+	4225.50,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -336,17 +337,17 @@ INSERT INTO Contract_Customers VALUES(
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500009;
 
--- 
-INSERT INTO Ledger(date_time) VALUES ('2011-03-03 11:03:06');
+-- Rhea.
+INSERT INTO Ledger(date_time) VALUES ('3011-03-03 11:03:06');
 SET @last_id_in_Ledger = LAST_INSERT_ID();
 INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 	VALUES(
 	500010,
 	396400,
 	396401,
-	'2011-03-03 11:03:06',
-	55000.00,
-	2250.00,
+	'3011-03-03 11:03:06',
+	15000.00,
+	1250.00,
 	@last_id_in_Ledger
 );
 SET @last_id_in_Contract = LAST_INSERT_ID();
@@ -360,5 +361,980 @@ INSERT INTO Contract_Customers VALUES(
 	@last_id_in_Contract,
 	200001);
 UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500010;
+
+-- Oberon.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-09 10:32:36');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500011,
+	396400,
+	396401,
+	'3011-05-09 10:32:36',
+	2300.00,
+	223.40,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500011;
+
+-- Iapetus.
+INSERT INTO Ledger(date_time) VALUES ('3011-08-01 09:13:46');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500012,
+	396400,
+	396401,
+	'3011-08-01 09:13:46',
+	7510.00,
+	750.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500012;
+
+-- MakeMake.
+INSERT INTO Ledger(date_time) VALUES ('3011-02-02 10:33:56');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500013,
+	396400,
+	396401,
+	'3011-02-02 10:33:56',
+	3545.00,
+	550.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500013;
+
+-- Gonggong.
+INSERT INTO Ledger(date_time) VALUES ('3011-01-02 21:23:26');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500014,
+	396400,
+	396401,
+	'3011-01-02 21:23:26',
+	3700.00,
+	350.10,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500014;
+
+-- Charon.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-08 01:43:44');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500015,
+	396400,
+	396401,
+	'3011-05-08 01:43:44',
+	12500.00,
+	1250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500015;
+
+-- Umbriel.
+INSERT INTO Ledger(date_time) VALUES ('3011-04-18 10:45:56');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500016,
+	396400,
+	396401,
+	'3011-04-18 10:45:56',
+	8345.00,
+	830.74,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500016;
+
+-- Ariel.
+INSERT INTO Ledger(date_time) VALUES ('3011-12-13 10:13:47');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500017,
+	396400,
+	396401,
+	'3011-12-13 10:13:47',
+	21450.00,
+	2150.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500017;
+
+-- Dione.
+INSERT INTO Ledger(date_time) VALUES ('3011-06-06 11:06:46');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500018,
+	396400,
+	396401,
+	'3011-06-06 11:06:46',
+	6500.00,
+	650.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500018;
+
+-- Quaoar.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-05 15:53:56');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500019,
+	396400,
+	396401,
+	'3011-05-05 15:53:56',
+	2765.00,
+	325.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500019;
+
+-- Tethys.
+INSERT INTO Ledger(date_time) VALUES ('3011-02-23 21:23:56');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500020,
+	396400,
+	396401,
+	'3011-02-23 21:23:56',
+	12000.00,
+	1230.50,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500020;
+
+-- Sedna.
+INSERT INTO Ledger(date_time) VALUES ('3011-04-04 14:43:46');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500021,
+	396400,
+	396401,
+	'3011-04-04 14:43:46',
+	18550.00,
+	1550.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500021;
+
+-- Ceres.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-15 15:33:22');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500022,
+	396400,
+	396401,
+	'3011-05-15 15:33:22',
+	65000.00,
+	6250.99,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500022;
+
+-- Orcus.
+INSERT INTO Ledger(date_time) VALUES ('3011-09-13 19:09:39');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500023,
+	396400,
+	396401,
+	'3011-09-13 19:09:39',
+	4900.00,
+	420.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500023;
+
+-- Salacia.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-08 18:38:08');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500024,
+	396400,
+	396401,
+	'3011-05-08 18:38:08',
+	2485.00,
+	250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500024;
+
+-- Varda.
+INSERT INTO Ledger(date_time) VALUES ('3011-01-25 12:23:22');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500025,
+	396400,
+	396401,
+	'3011-01-25 12:23:22',
+	7800.00,
+	720.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500025;
+
+-- Dysnomia.
+INSERT INTO Ledger(date_time) VALUES ('3011-11-13 14:13:16');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500026,
+	396400,
+	396401,
+	'3011-11-13 14:13:16',
+	4500.00,
+	250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500026;
+
+-- Varuna.
+INSERT INTO Ledger(date_time) VALUES ('3011-03-03 11:03:06');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500027,
+	396400,
+	396401,
+	'3011-03-03 11:03:06',
+	8100.00,
+	850.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500027;
+
+-- 'G!kunll'homdima.
+INSERT INTO Ledger(date_time) VALUES ('3011-10-10 15:10:12');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500028,
+	396400,
+	396401,
+	'3011-10-10 15:10:12',
+	5500.00,
+	550.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500028;
+
+-- Ixion.
+INSERT INTO Ledger(date_time) VALUES ('3011-08-08 18:38:39');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500029,
+	396400,
+	396401,
+	'3011-08-08 18:38:39',
+	14500.00,
+	1250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500029;
+
+-- Chaos.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-05 15:53:56');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500030,
+	396400,
+	396401,
+	'3011-05-05 15:53:56',
+	2450.00,
+	250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500030;
+
+-- Vesta.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-05 15:23:16');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500031,
+	396400,
+	396401,
+	'3011-05-05 15:23:16',
+	3585.00,
+	350.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500031;
+
+-- Pallas.
+INSERT INTO Ledger(date_time) VALUES ('3011-04-23 12:23:26');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500032,
+	396400,
+	396401,
+	'3011-04-23 12:23:26',
+	25000.00,
+	2000.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500032;
+
+-- Enceladus.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-30 14:43:46');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500033,
+	396400,
+	396401,
+	'3011-05-30 14:43:46',
+	95000.00,
+	9150.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500033;
+
+-- Miranda.
+INSERT INTO Ledger(date_time) VALUES ('3011-12-13 14:53:46');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500034,
+	396400,
+	396401,
+	'3011-12-13 14:53:46',
+	35900.00,
+	3250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500034;
+
+-- Dziewanna.
+INSERT INTO Ledger(date_time) VALUES ('3011-07-17 17:37:27');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500035,
+	396400,
+	396401,
+	'3011-07-17 17:37:27',
+	3650.00,
+	350.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500035;
+
+-- Vanth.
+INSERT INTO Ledger(date_time) VALUES ('3011-02-03 14:43:36');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500036,
+	396400,
+	396401,
+	'3011-02-03 14:43:36',
+	5000.00,
+	550.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500036;
+
+-- Hygiea.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-08 13:33:45');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500037,
+	396400,
+	396401,
+	'3011-05-08 13:33:45',
+	2800.00,
+	285.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500037;
+
+-- Proteus.
+INSERT INTO Ledger(date_time) VALUES ('3011-06-23 14:43:18');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500038,
+	396400,
+	396401,
+	'3011-06-23 14:43:18',
+	7000.00,
+	750.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500038;
+
+-- Huya.
+INSERT INTO Ledger(date_time) VALUES ('3011-10-23 10:23:26');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500039,
+	396400,
+	396401,
+	'3011-10-23 10:23:26',
+	850.00,
+	85.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500039;
+
+-- Mimas.
+INSERT INTO Ledger(date_time) VALUES ('3011-06-23 08:45:00');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500040,
+	396400,
+	396401,
+	'3011-06-23 08:45:00',
+	15000.00,
+	1250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500040;
+
+-- Nereid.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-17 15:34:08');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500041,
+	396400,
+	396401,
+	'3011-05-17 15:34:08',
+	900.00,
+	950.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500041;
+
+-- Interamnia.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-25 17:10:06');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500042,
+	396400,
+	396401,
+	'3011-05-25 17:10:06',
+	2600.00,
+	265.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500042;
+
+-- Ilmare.
+INSERT INTO Ledger(date_time) VALUES ('3011-05-28 14:43:55');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500043,
+	396400,
+	396401,
+	'3011-05-28 14:43:55',
+	1685.00,
+	250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500043;
+
+-- Hi'iaka.
+INSERT INTO Ledger(date_time) VALUES ('3011-11-20 14:43:16');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500044,
+	396400,
+	396401,
+	'3011-11-20 14:43:16',
+	5750.00,
+	550.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500044;
+
+-- Europa A.
+INSERT INTO Ledger(date_time) VALUES ('3011-01-09 17:08:21');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500045,
+	396400,
+	396401,
+	'3011-01-09 17:08:21',
+	500.00,
+	150.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500045;
+
+-- Davida.
+INSERT INTO Ledger(date_time) VALUES ('3011-12-01 11:13:47');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500046,
+	396400,
+	396401,
+	'3011-12-01 11:13:47',
+	11500.00,
+	875.10,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500046;
+
+-- Sylvia.
+INSERT INTO Ledger(date_time) VALUES ('3011-12-03 13:33:36');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500047,
+	396400,
+	396401,
+	'3011-12-03 13:33:36',
+	9000.00,
+	750.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500047;
+
+-- Actaea.
+INSERT INTO Ledger(date_time) VALUES ('3011-10-10 11:54:52');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500048,
+	396400,
+	396401,
+	'3011-10-10 11:54:52',
+	1250.00,
+	250.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500048;
+
+-- Hyperion.
+INSERT INTO Ledger(date_time) VALUES ('3011-02-28 11:03:06');
+SET @last_id_in_Ledger = LAST_INSERT_ID();
+INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
+	VALUES(
+	500049,
+	396400,
+	396401,
+	'3011-02-28 11:03:06',
+	8900.00,
+	750.00,
+	@last_id_in_Ledger
+);
+SET @last_id_in_Contract = LAST_INSERT_ID();
+INSERT INTO Contract_Asset VALUES(
+	@last_id_in_Contract,
+	(SELECT Asset_ID FROM Contract WHERE id = @last_id_in_Contract)); 
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200000);
+INSERT INTO Contract_Customers VALUES(
+	@last_id_in_Contract,
+	200001);
+UPDATE Asset SET Owned_By = 396400 WHERE Asset.id = 500049;
 
 UNLOCK TABLES;
