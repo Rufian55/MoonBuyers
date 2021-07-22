@@ -11,23 +11,23 @@
 <html>
 
 <head>
-<?php
+  <?php
     include('../includes/HeadMB.php');
   ?>
 </head>
 
 <body>
 <h1>MoonBuyers InterGalactic</h1>
-<h2>Show All Accounts</h2>
+<h2>Show Account By Customer ID</h2>
 <div>
 	<fieldset class="fieldset-auto-width">
 	<legend>Confidential</legend>
 		<fieldset class="fieldset-left">
 			<table class="table_display">
 				<tr>
-					<td class="bold">Account</td>
-					<td class="bold">Balance</td>
 					<td class="bold">Customer ID</td>
+					<td class="bold">Account #</td>
+					<td class="bold">Balance</td>
             		<td class="bold">Last Name</td>
             		<td class="bold">First Name</td>
             		<td class="bold">Address_1</td>
@@ -39,23 +39,27 @@
             		<td class="bold">Phone</td>
 				</tr>
 <?php
-if(!($stmt = $mysqli->prepare("SELECT A.id AS Account, A.Balance, Cu.id AS 'Cust_ID', Cu.Lname, Cu.Fname, Cu.Addr_1,
-									  Cu.Addr_2, Cu.City, Cu.State, Cu.Planet, Cu.Zip, Cu.Phone
-							   FROM Customers Cu
-							   INNER JOIN Account A ON Cu.id = A.C_ID"))) {
+if(!($stmt = $mysqli->prepare("SELECT Cu.id, A.id AS Account, A.Balance, Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2,
+									  Cu.City, Cu.State, Cu.Planet, Cu.Zip, Cu.Phone FROM Customers Cu
+							  INNER JOIN Account A ON Cu.id = A.C_ID
+							  WHERE Cu.id = ?"))){
 	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+}
+
+if(!($stmt->bind_param("i", $_POST['Customer_ID']))){
+	echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
 if(!$stmt->execute()){
 	echo "Execute failed: " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 
-if(!$stmt->bind_result($Account, $Balance, $Cust_ID, $Lname, $Fname, $Addr_1, $Addr_2, $City, $State, $Planet, $Zip, $Phone)){
+if(!$stmt->bind_result($id, $Account, $Balance, $Lname, $Fname, $Addr_1, $Addr_2, $City, $State, $Planet, $Zip, $Phone)){
 	echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 
 while($stmt->fetch()){
-	echo "<tr>\n<td>\n" . $Account . "\n</td>\n<td>\n" . $Balance . "\n</td>\n<td>\n" . $Cust_ID . "\n</td>\n<td>\n" . $Lname . "\n</td>\n<td>\n" . $Fname . "\n</td>\n<td>\n" . $Addr_1 . "\n</td>\n<td>\n" . $Addr_2 . "\n</td>\n<td>\n" . $City . "\n</td>\n<td>\n" . $State . "\n</td>\n<td>\n" . $Planet . "\n</td>\n<td>\n" . $Zip . "\n</td>\n<td>\n" . $Phone . "\n</td>\n</tr>";
+	echo "<tr>\n<td>\n" . $id . "\n</td>\n<td>\n" . $Account . "\n</td>\n<td>\n" . $Balance . "\n</td>\n<td>\n" . $Lname . "\n</td>\n<td>\n" . $Fname . "\n</td>\n<td>\n" . $Addr_1 . "\n</td>\n<td>\n" . $Addr_2 . "\n</td>\n<td>\n" . $City . "\n</td>\n<td>\n" . $State . "\n</td>\n<td>\n" . $Planet . "\n</td>\n<td>\n" . $Zip . "\n</td>\n<td>\n" . $Phone . "\n</td>\n</tr>";
 }
 
 $stmt->close();
