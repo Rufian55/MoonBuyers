@@ -1,22 +1,22 @@
 <?php
-//Turn on error reporting.
-ini_set('display_errors', 'On');
-//Connect to the database.
-$mysqli = new mysqli("localhost", "user", "password", "database");
+  //Turn on error reporting
+  ini_set('display_errors', 'On');
+  // Import dBase Credentials.
+  require('../../project/g3f2Kcd57nE4s25.php');
+  // Connect to the database.
+  $mysqli = new mysqli($servername, $username, $password, $database);
 ?>
 <!DOCTYPE HTML>
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="cache-control" content="no-cache" />
-<link rel="stylesheet" type="text/css" href="../Diamonds/style.css" />
-<link rel="shortcut icon" href="../Diamonds/images/favicon.ico" />
-<title>Diamond Buyers Inc.</title>
+  <?php
+    include('../includes/HeadMB.php');
+  ?>
 </head>
 
 <body>
-<h1>Diamond Buyers Inc.</h1>
+<h1>MoonBuyers InterGalactic</h1>
 <h2>Record A Transaction</h2>
 <div>
 	<fieldset class="fieldset-auto-width">
@@ -83,7 +83,7 @@ $mysqli = new mysqli("localhost", "user", "password", "database");
 		</fieldset>
 	</fieldset>
 	<br><br>
-	<button type="button" class="button" onclick="location.href='http://web.engr.oregonstate.edu/~kearnsc/Diamonds/';">Return to Main Page</button>
+	<button type="button" class="button" onclick="location.href='IndexMB.php';">Return to Main Page</button>
 	<br><br>
 </div>
 
@@ -92,10 +92,10 @@ $mysqli = new mysqli("localhost", "user", "password", "database");
 if(isset($_POST['submit'])){
 
 /**	1. Determine Seller's Account ID from Asset ID being sold. */
-	if(!($stmt = $mysqli->prepare("SELECT Owned_By FROM Asset WHERE id = ?"))){
+	if(!($stmt = $mysqli->prepare("SELECT Owned_By FROM Asset WHERE id = ?"))) {
 	echo "Prepare failed: " . $stmt->errno . " " . $stmt->error;
 	}
-	if(!($stmt->bind_param("i", $_POST['Asset_ID']))){
+	if(!($stmt->bind_param("i", $_POST['Asset_ID']))) {
 		echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 	}
 	if(!$stmt->execute()){
