@@ -1,19 +1,19 @@
 <?php
-//Turn on error reporting
-ini_set('display_errors', 'On');
-// Import dBase Credentials.
-require('../../project/g3f2Kcd57nE4s25.php');
-// Connect to the database.
-$mysqli = new mysqli($servername, $username, $password, $database);
+  //Turn on error reporting
+  ini_set('display_errors', 'On');
+  // Import dBase Credentials.
+  require('../../project/g3f2Kcd57nE4s25.php');
+  // Connect to the database.
+  $mysqli = new mysqli($servername, $username, $password, $database);
 ?>
 
 <!DOCTYPE HTML>
 <html>
 
 <head>
-	<?php
-		include('../includes/HeadMB.php');
-	?>
+  <?php
+    include('../includes/HeadMB.php');
+  ?>
 </head>
 
 <body>
