@@ -47,7 +47,7 @@
             		<td class="bold">Mass</td>
             		<td class="bold">Apparent Magnitude</td>
             		<td class="bold">Create Date</td>
-                    <td class="bold">Owned_By</td>
+                <td class="bold">Owned_By</td>
 				</tr>
 
 <?php // Get Customer records.

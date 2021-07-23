@@ -55,7 +55,7 @@ if(!$stmt->execute()){
 	echo "Execute failed: " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 
-if(!$stmt->bind_result($Account, $Balance, $Cust_ID, $Lname, $Fname, $Addr_1, $Addr_2, $City, $State, $Planet $Zip, $Phone)){
+if(!$stmt->bind_result($Account, $Balance, $Cust_ID, $Lname, $Fname, $Addr_1, $Addr_2, $City, $State, $Planet, $Zip, $Phone)){
 	echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 

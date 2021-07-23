@@ -33,8 +33,8 @@
             		<td class="bold">Address_1</td>
             		<td class="bold">Address_2</td>
             		<td class="bold">City</td>
-                    <td class="bold">State</td>
-                    <td class="bold">Planet</td>
+                <td class="bold">State</td>
+                <td class="bold">Planet</td>
             		<td class="bold">Zip</td>
             		<td class="bold">Phone</td>
 				</tr>
@@ -55,7 +55,7 @@ if(!$stmt->execute()){
 	echo "Execute failed: " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 
-if(!$stmt->bind_result($id, $Account, $Balance, $Lname, $Fname, $Addr_1, $Addr_2, $City, $State, $Zip, $Phone)){
+if(!$stmt->bind_result($id, $Account, $Balance, $Lname, $Fname, $Addr_1, $Addr_2, $City, $State, $Planet, $Zip, $Phone)){
 	echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 

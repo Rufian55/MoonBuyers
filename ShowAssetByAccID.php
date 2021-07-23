@@ -64,7 +64,7 @@ $stmt->close();
 		</fieldset>
 	</fieldset>
     <br><br>
-    <button type="button" class="button" onclick="location.href='IndexMB.php">Return to Main Page</button>
+    <button type="button" class="button" onclick="location.href = 'IndexMB.php';">Return to Main Page</button>
 </div>
 </body>
 

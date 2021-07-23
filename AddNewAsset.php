@@ -1,10 +1,15 @@
 <?php
-//Turn on error reporting
-ini_set('display_errors', 'On');
-// Import dBase Credentials.
-require('../../project/g3f2Kcd57nE4s25.php');
-// Connect to the database.
-$mysqli = new mysqli($servername, $username, $password, $database);
+	//Turn on error reporting
+	ini_set('display_errors', 'On');
+	// Import dBase Credentials.
+	require('../../project/g3f2Kcd57nE4s25.php');
+	// Connect to the database.
+	$mysqli = new mysqli($servername, $username, $password, $database);
+	// Date details for 1,000 years in the future.
+	$dateTime = new DateTime("NOW");
+	$day = $dateTime->format('d');
+	$month = $dateTime->format('m');
+	$year = $dateTime->format('Y') + 1000;
 ?>
 
 <!DOCTYPE HTML>
@@ -13,61 +18,64 @@ $mysqli = new mysqli($servername, $username, $password, $database);
 		<?php
 			include('../includes/HeadMB.php');
 		?>
+		<script src="../js/datePrep.js"></script>
 	</head>
 	<body>
-		<h1>Diamond Buyers Inc.</h1>
+		<h1>MoonBuyers InterGalactic</h1>
 		<h2>Add New Asset</h2>
 		<?php // Get 'to be Owned_By' Account ID.
 			if(isset($_POST['AddNewAsset'])){
-				$id = $_POST['AddNewAsset'];
+				$idFromPostData = $_POST['AddNewAsset'];
 			}
 		?>
 
-<div>
-	<fieldset class="fieldset-auto-width">
-	<legend>Data Entry</legend>
-		<fieldset class="fieldset-left">
+		<div>
+			<h3>Data Entry</h3>
 			<form method="post">
-            	<table class="ANC">
-				<tr>
-				<td width="100">Name:</td>
-                <td width="200"><input name="Name" type="text" id="Name" maxlength="25" size="30" autocomplete="off" required></td>
-				</tr>
-				<tr>
-                <td>Description:</td>
-                <td><input name="Descr" type="text" id="Descr" maxlength="255" size="30" autocomplete="off" required></td>
-				</tr>
-                <tr>
-                <td>Radius:</td>
-                <td><input name="Radius" type="text" id="Radius" maxlength="11" size="13" autocomplete="off" required></td>
-                </tr>
-                <tr>
-				<td>Mass:</td>
-                <td><input name="Mass" type="text" id="Mass" maxlength="11" size="13" autocomplete="off" required></td>
-				</tr>
-                <tr>
-                <td>Apparent Magnitude:</td>
-                <td><input name="ApMag" type="text" id="ApMag" maxlength="7" size="10" autocomplete="off" required></td>
-				</tr>
-				<tr>
-                <td>Create Date:</td>
-                <td><input name="cDate" type="date" id="cDate" maxlength="12" size="12" autocomplete="off" required></td>
-				</tr>
-                <tr>
-				<td>Owned By:</td>
-                <td><input type="hidden" name="Owned_By" value="<?php echo $id; ?>"/>
-                <input type="text" name="Owned_By" id="Owned_By" size="8" value="<?php echo $id; ?>" disabled="disabled" /></td></td>
-                </tr>
-				<tr><td></td><td align="right"><input type="submit" value="Add Asset" name="submit" id="submit"></td></tr>
-                </table>
+				<div class="form-group container">
+					<input class="form-control w-25" type="text" name="Name" id="Name" placeholder="Name" required>
+					<input class="form-control" type="text" name="Descr" id="Descr" placeholder="Description of New Asset" required>
+					<input class="form-control" type="text" name="Radius" id="Radius" placeholder="Radius in Kilometers" required>
+					<input class="form-control" type="text" name="Mass" id="Mass" min="0" step="0.01" placeholder="Mass in Kilograms" required>
+					<input class="form-control" type="text" name="Density" id="Density" min="0" step="0.01" placeholder="Density in Grams/Cubic Centimeter" required>
+					<input class="form-control" type="number" name="ApMag" id="ApMag" min="-30" max="30" step="0.001" placeholder="Apparent Magnitude" required>
+					<br>
+					<h5>Have You Confirmed the T.P.S. Report for Correct Ownership Information?</h5>
+					<select name="Owned_By">
+						<?php
+							if(!($stmt = $mysqli->prepare("SELECT id FROM Account"))) {
+								echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+							}
+							if (!$stmt->execute()) {
+								echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+							}
+							if(!$stmt->bind_result($id)) {
+								echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+							}
+							while($stmt->fetch()) {
+								if ($id == $idFromPostData) {
+									echo '<option selected value=" '. $id . ' "> ' . $id . '</option>\n';
+								}
+								else {
+									echo '<option value=" '. $id . ' "> ' . $id . '</option>\n';
+								}
+							}
+							$stmt->close();
+						?>
+					</select>
+					<br>
+					<h5>Management Approval Required for Any Date Other Than <?php echo date("m-d-Y", mktime(0,0,0,$month,$day,$year)); ?></h5>
+					<input name="cDate" type="date" id="endDate" value="<?php echo date("Y-m-d", mktime(0,0,0,$month,$day,$year)); ?>" required>
+					<br><br>
+					<input type="submit" type="reset" value="Add Asset" name="submit" id="submit">
+				</div>
+
 			</form>
             <script type="text/javascript">document.getElementById('cDate').value = getTDate();</script>
-		</fieldset>
-	</fieldset>
-	<br><br>
-	<button type="button" class="button" onclick="location.href = 'IndexMB.php';">Return to Main Page</button>
-	<br><br>
-</div>
+			<br>
+			<button type="button" class="button" onclick="location.href = 'IndexMB.php';">Return to Main Page</button>
+			<br><br>
+		</div>
 
 		<?php
 			/* Form handler - Executes on 'Add Asset' submit button clicked. */
@@ -92,6 +100,7 @@ $mysqli = new mysqli($servername, $username, $password, $database);
 
 				$stmt->close();
 			}
+
 		?>
 
 	</body>
