@@ -33,11 +33,11 @@
 			<h3>Data Entry</h3>
 			<form method="post">
 				<div class="form-group container">
-					<input class="form-control w-25" type="text" name="Name" id="Name" placeholder="Name" required>
+					<input class="form-control" type="text" name="Name" id="Name" placeholder="Name" required>
 					<input class="form-control" type="text" name="Descr" id="Descr" placeholder="Description of New Asset" required>
-					<input class="form-control" type="text" name="Radius" id="Radius" placeholder="Radius in Kilometers" required>
-					<input class="form-control" type="text" name="Mass" id="Mass" min="0" step="0.01" placeholder="Mass in Kilograms" required>
-					<input class="form-control" type="text" name="Density" id="Density" min="0" step="0.01" placeholder="Density in Grams/Cubic Centimeter" required>
+					<input class="form-control" type="number" name="Radius" id="Radius" min="0" step="0.01" placeholder="Radius in Kilometers" required>
+					<input class="form-control" type="number" name="Mass" id="Mass" min="0" step="0.01" placeholder="Mass in Kilograms" required>
+					<input class="form-control" type="number" name="Density" id="Density" min="0" step="0.01" placeholder="Density in Grams/Cubic Centimeter" required>
 					<input class="form-control" type="number" name="ApMag" id="ApMag" min="-30" max="30" step="0.001" placeholder="Apparent Magnitude" required>
 					<br>
 					<h5>Have You Confirmed the T.P.S. Report for Correct Ownership Information?</h5>
@@ -102,6 +102,20 @@
 			}
 
 		?>
+
+		<!-- Decimal Places Control. -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
+		</script>
+
+		<script>
+			$("#Radius, #Mass, #Density").blur(function() {
+				this.value = parseFloat(this.value).toFixed(2);
+			});
+			$("#ApMag").blur(function() {
+				this.value = parseFloat(this.value).toFixed(3);
+			});
+		</script>
 
 	</body>
 </html>
