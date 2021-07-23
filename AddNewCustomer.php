@@ -108,7 +108,7 @@
 
 	<script>
 		$("#Open").blur(function() {
-    	this.value = parseFloat(this.value).toFixed(2);
+			this.value = parseFloat(this.value).toFixed(2);
 		});
 		$("#Zip, #Phone").blur(function() {
 			this.value = parseFloat(this.value).toFixed(0);
