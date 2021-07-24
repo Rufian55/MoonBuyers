@@ -105,14 +105,13 @@
 
 	<?php
 		/* Form handler - Executes on 'Update Asset' submit button clicked. */
-		if(isset($_POST['submit'])) {
+		if (isset($_POST['submit'])) {
+
 			/* Prepare statement for UPDATE Asset's details. */
-			if(!($stmt = $mysqli->prepare("UPDATE Asset SET Name=?, Description=?, Radius=?, Mass=?, ApMag=?
-										   WHERE id=?"))) {
+			if (!($stmt = $mysqli->prepare("UPDATE Asset SET Name=?, Description=?, Radius=?, Mass=?, ApMag=?
+																			WHERE id=?"))) {
 				echo "<p class=\"error\">Prepare for Asset UPDATE query failed: "  . $stmt->errno . " " . $stmt->error . "</p>" ; 
 			}
-
-			echo "id= " . $GLOBALS['EditAsset_'];
 
 			/* Bind Parameters for UPDATE Asset's details. */
 			if (!($stmt->bind_param("ssdddi", $_POST['Name'], $_POST['Descr'], $_POST['Radius'], $_POST['Mass'], $_POST['ApMag'], $_POST['assetID_']))) {
