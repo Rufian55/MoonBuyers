@@ -298,6 +298,7 @@
 				echo "<p class=\"error\">ERROR! Tables did not unlock following write: (" . $mysqli->errno . ")" . $mysqli->error . "</p>";
 			}
 			$stmt->close();
+
 		}
 		else {
 			echo "<p class=\"error\">Buyer's Account ID and Seller's Account ID cannot be the same!</p>";}
