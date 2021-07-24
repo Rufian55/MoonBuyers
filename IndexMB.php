@@ -162,7 +162,7 @@
 
 		<p>Edit An Asset</p>
 		<form method="post" action="EditAsset.php">
-			<select name="EditAsset">
+			<select name="EditAsset" id="EditAsset">
 				<?php
 				if(!($stmt = $mysqli->prepare("SELECT id FROM Asset ORDER BY id ASC"))){
 					echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;

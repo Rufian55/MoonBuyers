@@ -18,7 +18,6 @@
 		<?php
 			include('../includes/HeadMB.php');
 		?>
-		<script src="../js/datePrep.js"></script>
 	</head>
 	<body>
 		<h1>MoonBuyers InterGalactic</h1>
@@ -37,7 +36,6 @@
 					<input class="form-control" type="text" name="Descr" id="Descr" placeholder="Description of New Asset" required>
 					<input class="form-control" type="number" name="Radius" id="Radius" min="0" step="0.01" placeholder="Radius in Kilometers" required>
 					<input class="form-control" type="number" name="Mass" id="Mass" min="0" step="0.01" placeholder="Mass in Kilograms" required>
-					<input class="form-control" type="number" name="Density" id="Density" min="0" step="0.01" placeholder="Density in Grams/Cubic Centimeter" required>
 					<input class="form-control" type="number" name="ApMag" id="ApMag" min="-30" max="30" step="0.001" placeholder="Apparent Magnitude" required>
 					<br>
 					<h5>Have You Confirmed the T.P.S. Report for Correct Ownership Information?</h5>
@@ -71,7 +69,6 @@
 				</div>
 
 			</form>
-            <script type="text/javascript">document.getElementById('cDate').value = getTDate();</script>
 			<br>
 			<button type="button" class="button" onclick="location.href = 'IndexMB.php';">Return to Main Page</button>
 			<br><br>
@@ -109,7 +106,7 @@
 		</script>
 
 		<script>
-			$("#Radius, #Mass, #Density").blur(function() {
+			$("#Radius, #Mass").blur(function() {
 				this.value = parseFloat(this.value).toFixed(2);
 			});
 			$("#ApMag").blur(function() {
