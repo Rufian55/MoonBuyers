@@ -1,51 +1,52 @@
-/* CSS Document for Diamond Buyers Inc.
-*  http://web.engr.oregonstate.edu/~kearnsc/Diamonds/
-*/
+/* CSS Document for MoonBuyers Intergalactic. */
 @charset "utf-8";
 
-body{background-color:#E5FFFF}
+body {
+	background-color:#f7f4c3; /* Soft Yellow */
+}
 
-h1{
+h1 {
 	text-align:center;
-	color:#FF0000;
+	color:#000000;		/* Black */
 }
 
-h2{
+h2 {
 	text-align:center;
-	color:#FF0000;
+	color:#006400;		/* Dark Green */
 }
 
-/* For index.php page. */
-.fieldset-width_1{
-	display:inline-block;
-	text-align: left;
-	font:Arial, Helvetica, sans-serif;
-	color:#3300FF;
-	font-size:18px;
-	width:550px;
+h3 {
+	text-align:center;
+	color:#db1ed1;		/* Light Purple */
 }
 
-/* For all other pages. */
-.fieldset-auto-width{
-	display:inline-block;
-	text-align: left;
-	font:Arial, Helvetica, sans-serif;
-	color:#3300FF;
-	font-size:18px;
+h5 {
+	text-align:center;
+	color:#db0022;		/* Light Purple */
 }
 
-.fieldset-inner{background-color: #EEFFFF;}
-
-.table_display td{
-	border: 1px solid blue;
-	padding: 5px;
-	
+/* Horizontal Seperator. */
+.hr-all {
+	margin: auto 250px;
+    border-color: #aC0000;
+    border-style: solid;
+    border-bottom: 1px;
+    padding:10px;
 }
 
 .bold{
-	color:#CC0000;
+	color:#0000bb;
 	font:bold;
-	font-size:16px;
+	font-size:14px;
+}
+
+#table-borders-override {
+	border: 2px solid blue;
+	padding: 1px;
+}
+
+#assetID_ {
+	display: none;
 }
 
 legend{
@@ -54,7 +55,9 @@ legend{
 	margin:0 auto;
 }
 
-div{text-align:center;}
+div {
+	text-align:center;
+}
 
 a:link, a:visited {color:#3300FF;}
 
@@ -69,7 +72,14 @@ button {
 	background-color: #2994FF;
 	color: yellow;
 }
-button:hover{background:#FF0000;}
+
+button:hover{
+	background:#FF0000;
+}
+
+.form-group {
+	max-width: 50%;
+}
 
 /* For submit buttons on index.php */
 #button {
@@ -83,7 +93,7 @@ button:hover{background:#FF0000;}
 #button:hover{background:#FF0000;}
 
 /* AddNewCustomer.php table. */
-.ANC{
+.ANC {
 	width:481px;
 	border: 0px;
 	cellspacing:1px;
@@ -109,7 +119,7 @@ button:hover{background:#FF0000;}
 	color:#009900;
 }
 
-/* Styleing for sucess messages. */
+/* Styleing for success messages. */
 .error{
 	text-align:center;
 	font:Arial, Helvetica, sans-serif;
@@ -121,4 +131,11 @@ button:hover{background:#FF0000;}
 	overflow-y:auto;
 	height:725px;
 	max-height:725px;
+}
+
+/* For screens < 900px width, lengthen the <hr> seperators. */
+@media only screen and (max-width: 900px) {
+  .hr-all {
+  	margin: auto 0px;
+  }
 }
