@@ -11,9 +11,9 @@
 <html>
 
 <head>
-  <?php
-    include('../includes/HeadMB.php');
-  ?>
+	<?php
+		include('../includes/HeadMB.php');
+	?>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 			<h3>Data Entry</h3>
 			<form method="post">
 				<div class="form-group container">
-					<input class="form-control" type="text" maxlength="30" name="Lname" id="Lname" placeholder="Customer Oganized As: LLC, Ltd. etc." required>
+					<input class="form-control" type="text" maxlength="30" name="Lname" id="Lname" placeholder="Customer Organized As: LLC, Ltd. etc." required>
 					<input class="form-control" type="text" maxlength="30" name="Fname" id="Fname" placeholder="Business Name" required>
 					<input class="form-control" type="text" maxlength="30" name="Addr_1" id="Addr_1" placeholder="Address 1" required>
 					<input class="form-control" type="text" maxlength="30" name="Addr_2" id="Addr_2" placeholder="Address 2" required>
@@ -39,7 +39,7 @@
 				</div>
 			</form>
 		</div>
-		<br><br>
+		<br>
 		<button type="button" class="button" onclick="location.href='IndexMB.php';">Return to Main Page</button>
 		<br><br>
 	</div>
@@ -111,7 +111,7 @@
 			this.value = parseFloat(this.value).toFixed(2);
 		});
 		$("#Zip, #Phone").blur(function() {
-			this.value = parseFloat(this.value).toFixed(0);
+			this.value = Math.abs(parseFloat(this.value).toFixed(0));
 		});
 	</script>
 

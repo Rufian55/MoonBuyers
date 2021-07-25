@@ -36,17 +36,17 @@
 	<h2>Edit An Asset</h2>
 	<div class="container">
 		<h3>Orginal Asset Details</h3>
-		<table class="table table-bordered">
+		<table class="table table-hover table-bordered">
 			<thead>
-				<tr id="table-borders-override">
-					<td class="bold">Asset ID</td>
-					<td class="bold">Name</td>
-          <td class="bold">Description</td>
-          <td class="bold">Radius</td>
-          <td class="bold">Mass</td>
-          <td class="bold">Apparent Magnitude</td>
-          <td class="bold">Create Date</td>
-          <td class="bold">Owned By</td>
+				<tr class="success">
+					<th class="text-center bold">Asset ID</th>
+					<th class="text-center bold">Name</th>
+          			<th class="text-center bold">Description</th>
+          			<th class="text-center bold">Radius</th>
+          			<th class="text-center bold">Mass</th>
+          			<th class="text-center bold">Apparent Magnitude</th>
+          			<th class="text-center bold">Create<span class="span-hide">_</span>Date</th>
+          			<th class="text-center bold">Owned By</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -54,7 +54,7 @@
 					if (isset($_POST['EditAsset'])) {
 
 						if (!($stmt = $mysqli->prepare("SELECT id, Name, Description, Radius, Mass, ApMag, Create_Date, Owned_By
-												  								 FROM Asset WHERE id=?"))) {
+												  									FROM Asset WHERE id=?"))) {
 							echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 						}
 
@@ -98,7 +98,7 @@
 				<input type="submit" value="Submit Asset Changes" name="submit" id="submit">
 			</div>
 		</form>
-		<br><br>
+		<br>
 		<button type="button" class="button" onclick="location.href = 'IndexMB.php';">Return to Main Page</button>
 		<br><br>
 	</div>
@@ -109,7 +109,7 @@
 
 			/* Prepare statement for UPDATE Asset's details. */
 			if (!($stmt = $mysqli->prepare("UPDATE Asset SET Name=?, Description=?, Radius=?, Mass=?, ApMag=?
-																			WHERE id=?"))) {
+											WHERE id=?"))) {
 				echo "<p class=\"error\">Prepare for Asset UPDATE query failed: "  . $stmt->errno . " " . $stmt->error . "</p>" ; 
 			}
 
@@ -141,8 +141,8 @@
 	</script>
 
 	<script>
-		$("#Radius, #Mass, #Density").blur(function() {
-			this.value = parseFloat(this.value).toFixed(2);
+		$("#Radius, #Mass").blur(function() {
+			this.value = Math.abs(parseFloat(this.value).toFixed(2));
 		});
 		$("#ApMag").blur(function() {
 			this.value = parseFloat(this.value).toFixed(3);

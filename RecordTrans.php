@@ -304,6 +304,17 @@
 			echo "<p class=\"error\">Buyer's Account ID and Seller's Account ID cannot be the same!</p>";}
 		}
 	?>
+		<!-- Decimal Places Control. -->
+	<script
+		src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
+	</script>
+
+	<script>
+		$("#Trans_at, #Com_pd").blur(function() {
+			this.value = Math.abs(parseFloat(this.value).toFixed(2));
+		});
+	</script>
+
 
 </body>
 </html>
