@@ -1,8 +1,12 @@
 /* CSS Document for MoonBuyers Intergalactic. */
 @charset "utf-8";
 
+:root {
+	--background-color:  #f7f4c3;
+}
+
 body {
-	background-color:#f7f4c3; /* Soft Yellow */
+	background-color: var(--background-color); /* Soft Yellow */
 }
 
 h1 {
@@ -34,14 +38,15 @@ h5 {
     padding:10px;
 }
 
-.bold{
-	color:#0000bb;
-	font:bold;
-	font-size:14px;
+.bold {
+	color:	#0000bb;
+	font-weight:	bold;
+	font-size:	16px;
+  vertical-align: middle !important;
 }
 
 #table-borders-override {
-	border: 2px solid blue;
+	border: 1px solid blue;
 	padding: 1px;
 }
 
@@ -49,7 +54,20 @@ h5 {
 	display: none;
 }
 
-legend{
+.table {
+	margin: auto;
+	max-width: 60%;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #ff000025;
+}
+
+span.span-hide {
+	color: #dff0d8; /* Bootstrap 3 'success' [docs are wrong!!]. */
+}
+
+legend {
 	color:red;
 	font-size:18px;
 	margin:0 auto;
@@ -59,9 +77,13 @@ div {
 	text-align:center;
 }
 
-a:link, a:visited {color:#3300FF;}
+a:link, a:visited {
+	color:#3300FF;
+}
 
-a:hover{color:#FF0000;}
+a:hover {
+	color:#FF0000;
+}
 
 /* For return to main page buttons on each query result page. */
 button {
@@ -92,16 +114,10 @@ button:hover{
 }
 #button:hover{background:#FF0000;}
 
-/* AddNewCustomer.php table. */
-.ANC {
-	width:481px;
-	border: 0px;
-	cellspacing:1px;
-	cellpadding:2px;
-}
+
 
 /* For submit buttons on combination form/php pages. */
-#submit{
+#submit {
 	height: 30px;
 	width:auto
 	border-radius: 5px;
@@ -109,25 +125,28 @@ button:hover{
 	background-color: #2994FF;
 	color: yellow;
 }
-#submit:hover{background:#FF0000;}
+
+#submit:hover {
+	background:#FF0000;
+}
 
 /* Styling for error messages. */
-.success{
+.success {
 	text-align:center;
 	font:Arial, Helvetica, sans-serif;
 	font-size:18px;
 	color:#009900;
 }
 
-/* Styleing for success messages. */
-.error{
+/* Styling for success messages. */
+.error {
 	text-align:center;
 	font:Arial, Helvetica, sans-serif;
 	font-size:18px;
 	color:#FF0000;
 }
 
-.overflow{
+.overflow {
 	overflow-y:auto;
 	height:725px;
 	max-height:725px;
