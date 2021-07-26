@@ -28,13 +28,19 @@
 			return $decimal;
 		}
 	 
-		// Removes everything not 'alphanumeric' '.' '-' ','.  
+		/* Removes everything not 'alphanumeric' '.' ',' 'space', '-'   */  
 		function CleanString($string) {
-			$string = preg_replace('/[^0-9A-Za-z.-,]+/' ,'', $string);
+			$string = preg_replace('/[^0-9A-Za-z., -]/' ,'', $string);
 			return $string;
 		}
 
-		// Removes everything no numeric or '-'.
+		// Removes everything not uppercase A through Z.
+		function CleanStateString($stateString) {
+			$stateString = preg_replace('/[^A-Z]/', '', $stateString);
+			return $stateString;
+		}
+
+		/* Removes everything no numeric or '-'   */
 		function CleanDate($date) {
 			$date = preg_replace('/[^0-9-]/', '', $date);
 			return $date;
