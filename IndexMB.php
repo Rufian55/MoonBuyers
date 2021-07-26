@@ -5,6 +5,8 @@
 	require('../../project/g3f2Kcd57nE4s25.php');
 	// Connect to the database.
 	$mysqli = new mysqli($servername, $username, $password, $database);
+	// Set dBase to utf8 character set.
+	mysqli_set_charset($mysqli, "utf8");
 	// Date details for 1,000 years in the future.
 	$dateTime = new DateTime("NOW");
 	$day = $dateTime->format('d');
@@ -24,6 +26,28 @@
 <body>
 	<h1>MoonBuyers InterGalactic</h1>
 	<h2>Main Page</h2>
+	
+	<div class="row">
+		<div class="col-md-2"></div>
+        <div class="col-md-2">
+	       	<div class="scroll-container col-centered">
+  				<div class="chevron"></div>
+  				<div class="chevron"></div>
+  				<div class="chevron"></div>
+  			</div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+        	<div class="scroll-container col-centered">
+        		<div class="chevron"></div>
+        		<div class="chevron"></div>
+        		<div class="chevron"></div>
+        	</div>
+        </div>
+		<div class="col-md-2"></div>
+    </div>
+	
 	<div>
 		<br>
 		<hr class="hr-all">

@@ -30,13 +30,13 @@
 						<td class="bold">Asset ID</td>
 						<td class="bold">Amount</td>
 						<td class="bold">Commission</td>
-						<td class="bold">Description</td>
+						<td class="bold">Asset Name</td>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 					if (!($stmt = $mysqli->prepare("SELECT L.id, L.date_time, CO.id as ID, CO.Asset_ID, CO.Trans_at, CO.Com_pd,
-																						AST.Description, AST.Owned_By
+																						AST.Name, AST.Owned_By
 																					FROM Ledger L
 																					INNER JOIN Contract CO ON CO.L_ID = L.id
 																					INNER JOIN Contract_Asset CA ON CA.Contract_ID = CO.id
@@ -49,14 +49,14 @@
 						echo "Execute failed: " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 					}
 
-					if (!$stmt->bind_result($id, $date_time, $ID, $Asset_ID, $Trans_at, $Com_pd, $Description, $Owned_By)) {
+					if (!$stmt->bind_result($id, $date_time, $ID, $Asset_ID, $Trans_at, $Com_pd, $Name, $Owned_By)) {
 						echo "Bind failed: " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 					}
 
 					while ($stmt->fetch()) {
 						echo "<tr>\n<td>\n" . $id . "\n</td>\n<td>\n" . $date_time . "\n</td>\n<td>\n" . $ID .
 								 "\n</td>\n<td>\n" . $Asset_ID . "\n</td>\n<td>\n" . $Trans_at . "\n</td>\n<td>\n" . $Com_pd .
-								 "\n</td>\n<td>\n" . $Description . "\n</td>\n</tr>";
+								 "\n</td>\n<td>\n" . $Name . "\n</td>\n</tr>";
 					}
 
 					$stmt->close();

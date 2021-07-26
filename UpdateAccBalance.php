@@ -12,6 +12,7 @@
 <head>
   <?php
     include('../includes/HeadMB.php');
+    require('../includes/Sanitizer.php');
   ?>
 
 <script type="text/javascript">
@@ -95,8 +96,11 @@
 				echo "<p class=\"error\">Prepare for Account Balance UPDATE query failed: " . $stmt->errno . " " . $stmt->error . "</p>"; 
 			}
 
+			$cleaner = new Cleaner();
+			$_Balance = $cleaner->CleanDecimal($_POST['Balance_']);
+
 			// Bind Parameters for UPDATE customer's Balance.
-			if (!($stmt->bind_param("di", $_POST['Balance_'], $_POST['id_']))) {
+			if (!($stmt->bind_param("di", $_Balance, $_POST['id_']))) {
 				echo "<p class=\"error\">Bind failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 			}
 

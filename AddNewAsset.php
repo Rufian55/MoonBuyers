@@ -17,6 +17,7 @@
 	<head>
 		<?php
 			include('../includes/HeadMB.php');
+			require('../includes/Sanitizer.php');
 		?>
 	</head>
 	<body>
@@ -63,7 +64,7 @@
 					</select>
 					<br>
 					<h5>Management Approval Required for Any Date Other Than <?php echo date("m-d-Y", mktime(0,0,0,$month,$day,$year)); ?></h5>
-					<input name="cDate" type="date" id="endDate" value="<?php echo date("Y-m-d", mktime(0,0,0,$month,$day,$year)); ?>" required>
+					<input name="cDate" type="date" id="cDate" value="<?php echo date("Y-m-d", mktime(0,0,0,$month,$day,$year)); ?>" required>
 					<br><br>
 					<input type="submit" type="reset" value="Add Asset" name="submit" id="submit">
 				</div>
@@ -83,8 +84,17 @@
 						echo "<p class=\"error\">Prepare for Asset INSERT query failed: "  . $stmt->errno . " " . $stmt->error . "</p>" ; 
 				}
 
+				// Sanitize user input.
+				$cleaner = new Cleaner();
+				$_name = $cleaner->CleanString($_POST['Name']);
+				$_descr = $cleaner->CleanString($_POST['Descr']);
+				$_radius = $cleaner->CleanDecimal($_POST['Radius']);
+				$_mass = $cleaner->CleanDecimal($_POST['Mass']);
+				$_apMag = $cleaner->CleanDecimal($_POST['ApMag']);
+				$_cDate = $cleaner->CleanDate($_POST['cDate']);
+
 				/* Bind Parameters for INSERT new Asset's details. */
-				if(!($stmt->bind_param("ssdddsi", $_POST['Name'], $_POST['Descr'], $_POST['Radius'], $_POST['Mass'], $_POST['ApMag'], $_POST['cDate'], $_POST['Owned_By']))) {
+				if(!($stmt->bind_param("ssdddsi", $_name, $_descr, $_radius, $_mass, $_apMag, $_cDate, $_POST['Owned_By']))) {
 					echo "<p class=\"error\">Bind failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 				}
 

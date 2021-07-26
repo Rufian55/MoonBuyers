@@ -13,6 +13,7 @@
 <head>
 	<?php
 		include('../includes/HeadMB.php');
+		require('../includes/Sanitizer.php');
 	?>
 
 	<script type="text/javascript">
@@ -54,7 +55,7 @@
 					if (isset($_POST['EditAsset'])) {
 
 						if (!($stmt = $mysqli->prepare("SELECT id, Name, Description, Radius, Mass, ApMag, Create_Date, Owned_By
-												  									FROM Asset WHERE id=?"))) {
+												  		FROM Asset WHERE id=?"))) {
 							echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 						}
 
@@ -84,7 +85,7 @@
 	<br><br>
 
 	<div>
-		<h3>Data Entry (pre-populated with old values)</h3>
+		<h3>Data Entry</h3>
 		<form method="post">
 			<div class="form-group container">
 				<?php //assetID_ css display: none - this field needed as reference to $_POST['EditAsset'] passed from IndexMB.php is lost on submit. ?>
@@ -113,8 +114,16 @@
 				echo "<p class=\"error\">Prepare for Asset UPDATE query failed: "  . $stmt->errno . " " . $stmt->error . "</p>" ; 
 			}
 
+			// Sanitize user input.
+			$cleaner = new Cleaner();
+			$_name = $cleaner->CleanString($_POST['Name']);
+			$_descr = $cleaner->CleanString($_POST['Descr']);
+			$_radius = $cleaner->CleanDecimal($_POST['Radius']);
+			$_mass = $cleaner->CleanDecimal($_POST['Mass']);
+			$_apMag = $cleaner->CleanDecimal($_POST['ApMag']);
+
 			/* Bind Parameters for UPDATE Asset's details. */
-			if (!($stmt->bind_param("ssdddi", $_POST['Name'], $_POST['Descr'], $_POST['Radius'], $_POST['Mass'], $_POST['ApMag'], $_POST['assetID_']))) {
+			if (!($stmt->bind_param("ssdddi", $_name, $_descr, $_radius, $_mass, $_apMag, $_POST['assetID_']))) {
 			echo "<p class=\"error\">Bind failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 			}
 
@@ -125,7 +134,6 @@
 			else {
 				echo "<p class=\"success\">Updated " . $stmt->affected_rows . " rows in table \"Asset\".</p>";
 				echo "<p class=\"success\">Form has been cleared.</p>";
-				echo "Error message = " . mysqli_error($mysqli);
 			}
 
 			$stmt->close();

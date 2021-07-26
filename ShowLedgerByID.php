@@ -1,5 +1,5 @@
 <?php
-  //Turn on error reporting
+  // Turn on error reporting
   ini_set('display_errors', 'On');
   // Import dBase Credentials.
   require('../../project/g3f2Kcd57nE4s25.php');
@@ -30,13 +30,13 @@
 					<th class="text-center bold">Asset ID</th>
 					<th class="text-center bold">Amount</th>
 					<th class="text-center bold">Commission</th>
-					<th class="text-center bold">Description</th>
+					<th class="text-center bold">Asset Name</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 					if (!($stmt = $mysqli->prepare("SELECT L.id, L.date_time, CO.id as ID, CO.Asset_ID, CO.Trans_at, CO.Com_pd,
-																						AST.Description, AST.Owned_By
+																						AST.Name, AST.Owned_By
 																					FROM Ledger L
 																					INNER JOIN Contract CO ON CO.L_ID = L.id
 																					INNER JOIN Contract_Asset CA ON CA.Contract_ID = CO.id
@@ -54,13 +54,13 @@
 						echo "Execute failed: " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 					}
 
-					if (!$stmt->bind_result($id, $date_time, $ID, $Asset_ID, $Trans_at, $Com_pd, $Description, $Owned_By)) {
+					if (!$stmt->bind_result($id, $date_time, $ID, $Asset_ID, $Trans_at, $Com_pd, $Name, $Owned_By)) {
 						echo "Bind failed: " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 					}
 
 					while ($stmt->fetch()) {
 						echo "<tr>\n<td>\n" . $id . "\n</td>\n<td>\n" . $date_time . "\n</td>\n<td>\n" . $ID . "\n</td>\n<td>\n" . $Asset_ID .
-								 "\n</td>\n<td>\n" . $Trans_at . "\n</td>\n<td>\n" . $Com_pd . "\n</td>\n<td>\n" . $Description . "\n</td>\n</tr>";
+								 "\n</td>\n<td>\n" . $Trans_at . "\n</td>\n<td>\n" . $Com_pd . "\n</td>\n<td>\n" . $Name . "\n</td>\n</tr>";
 					}
 
 					$stmt->close();

@@ -12,6 +12,7 @@
 <head>
   <?php
     include('../includes/HeadMB.php');
+    require('../includes/Sanitizer.php');
   ?>
   <script type="text/javascript">
 		// Clears prepopulated form following Update Customer submit button click. 
@@ -89,15 +90,15 @@
 				<div class="form-group container">
 					<?php // Note hidden id field needed as $_POST['id'] is lost on 2nd post. ?>
 					<input class="form-control hidden" type="text" name="id_" id="id_" size="20" value="<?php echo $id; ?>">
-					<input class="form-control" type="text" maxlength="30" name="Lname" id="Lname" placeholder="Customer Organized As: LLC, Ltd. etc." >
-					<input class="form-control" type="text" maxlength="30" name="Fname" id="Fname" placeholder="Business Name">
-					<input class="form-control" type="text" maxlength="30" name="Addr_1" id="Addr_1" placeholder="Address 1">
-					<input class="form-control" type="text" maxlength="30" name="Addr_2" id="Addr_2" placeholder="Address 2">
-					<input class="form-control" type="text" maxlength="25" name="City" id="City" placeholder="City">
-					<input class="form-control" type="text" maxlength="2" name="State" id="State" placeholder="State">
-					<input class="form-control" type="text" maxlength="25" name="Planet" id="Planet" placeholder="Planet">
-					<input class="form-control" type="number" maxlength="20" min="0" name="Zip" id="Zip" placeholder="Zip">
-					<input class="form-control" type="number" maxlength="20" min="0" name="Phone" id="Phone" placeholder="Phone">
+					<input class="form-control" type="text" maxlength="30" name="Lname" id="Lname" value="<?php echo $Lname; ?>" placeholder="Customer Organized As: LLC, Ltd. etc." required>
+					<input class="form-control" type="text" maxlength="30" name="Fname" id="Fname" value="<?php echo $Fname; ?>" placeholder="Business Name" required>
+					<input class="form-control" type="text" maxlength="30" name="Addr_1" id="Addr_1" value="<?php echo $Addr_1; ?>" placeholder="Address 1" required>
+					<input class="form-control" type="text" maxlength="30" name="Addr_2" id="Addr_2" value="<?php echo $Addr_2; ?>" placeholder="Address 2" required>
+					<input class="form-control" type="text" maxlength="25" name="City" id="City" value="<?php echo $City; ?>" placeholder="City" required>
+					<input class="form-control" type="text" maxlength="2" name="State" id="State" value="<?php echo $State; ?>" placeholder="State" required>
+					<input class="form-control" type="text" maxlength="25" name="Planet" id="Planet" value="<?php echo $Planet; ?>" placeholder="Planet" required>
+					<input class="form-control" type="number" maxlength="20" min="0" name="Zip" id="Zip" value="<?php echo $Zip; ?>" placeholder="Zip" required>
+					<input class="form-control" type="number" maxlength="20" min="0" name="Phone" id="Phone" value="<?php echo $Phone; ?>" placeholder="Phone" required>
 					<br><br>
 					<input type="submit" type="reset" value="Update Customer Details" name="submit" id="submit">
 				</div>
@@ -116,9 +117,21 @@
 				echo "<p class=\"error\">Prepare for Customers UPDATE query failed: "  . $stmt->errno . " " . $stmt->error . "</p>" ; 
 			}
 
+			// Sanitize user input.
+			$cleaner = new Cleaner();
+			$_Fname = $cleaner->CleanString($_POST['Fname']);
+			$_Lname = $cleaner->CleanString($_POST['Lname']);
+			$_Addr_1 = $cleaner->CleanString($_POST['Addr_1']);
+			$_Addr_2 = $cleaner->CleanString($_POST['Addr_2']);
+			$_City = $cleaner->CleanString($_POST['City']);
+			$_State = $cleaner->CleanStateString($_POST['State']);
+			$_Planet = $cleaner->CleanString($_POST['Planet']);
+			$_Zip = $cleaner->CleanInt($_POST['Zip']);
+			$_Phone = $cleaner->CleanInt($_POST['Phone']);
+			$_Open = $cleaner->CleanDecimal($_POST['Open']);
+
 			/* Bind Parameters for INSERT new customer's details. */
-			if (!($stmt->bind_param("sssssssiii", $_POST['Fname'], $_POST['Lname'], $_POST['Addr_1'], $_POST['Addr_2'], $_POST['City'],
-																					 $_POST['State'], $_POST['Planet'], $_POST['Zip'], $_POST['Phone'], $_POST['id_']))) {
+			if (!($stmt->bind_param("sssssssiii", $_Fname, $_Lname, $_Addr_1, $_Addr_2, $_City, $_State, $_Planet, $_Zip, $_Phone, $_POST['id_']))) {
 					echo "<p class=\"error\">Bind failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 			}
 

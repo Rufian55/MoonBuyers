@@ -13,6 +13,7 @@
 <head>
 	<?php
 		include('../includes/HeadMB.php');
+		require('../includes/Sanitizer.php');
 	?>
 </head>
 
@@ -58,42 +59,56 @@
 					echo "<p class=\"error\">Prepare for Customers INSERT query failed: "  . $stmt->errno . " " . $stmt->error . "</p>" ; 
 			}
 
+			// Sanitize user input.
+			$cleaner = new Cleaner();
+			$_Fname = $cleaner->CleanString($_POST['Fname']);
+			$_Lname = $cleaner->CleanString($_POST['Lname']);
+			$_Addr_1 = $cleaner->CleanString($_POST['Addr_1']);
+			$_Addr_2 = $cleaner->CleanString($_POST['Addr_2']);
+			$_City = $cleaner->CleanString($_POST['City']);
+			$_State = $cleaner->CleanStateString($_POST['State']);
+			$_Planet = $cleaner->CleanString($_POST['Planet']);
+			$_Zip = $cleaner->CleanInt($_POST['Zip']);
+			$_Phone = $cleaner->CleanInt($_POST['Phone']);
+			$_Open = $cleaner->CleanDecimal($_POST['Open']);
+
 			/* Bind Parameters for INSERT new customer's details. */
-			if(!($stmt->bind_param("sssssssii", $_POST['Fname'], $_POST['Lname'], $_POST['Addr_1'], $_POST['Addr_2'], $_POST['City'], $_POST['State'], $_POST['Planet'], $_POST['Zip'], $_POST['Phone']))){
+			if (!($stmt->bind_param("sssssssii", $_Fname, $_Lname, $_Addr_1, $_Addr_2, $_City, $_State, $_Planet, $_Zip, $_Phone))) {
 				echo "<p class=\"error\">Bind failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 			}
 
 			/* Execute INSERT new customer's details. */
-			if(!$stmt->execute()){
+			if (!$stmt->execute()) {
 				echo "<p class=\"error\">Execute failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 			} else {
 				echo "<p class=\"success\">Added " . $stmt->affected_rows . " new Customer to table \"Customers\".</p>";
 			}
 
 			/* Retrieve last insert ID which = new Customer ID. */
-			if($temp = $mysqli->insert_id) {
+			if ($temp = $mysqli->insert_id) {
 				echo "<p class=\"success\">New Customer ID = " . $temp . "</p>";
-			} else {
+			}
+			else {
 		    	echo "<p class=\"error\">There was an error retrieving the new Customer ID. Error: " . $mysqli->error . "</p>";
 			}
 
 			/* Prepare statement for new customer's new account. */
-			if(!($stmt = $mysqli->prepare("INSERT INTO Account (C_ID, Balance) VALUES(?,?)"))) {
+			if (!($stmt = $mysqli->prepare("INSERT INTO Account (C_ID, Balance) VALUES(?,?)"))) {
 				echo "<p classs=\"error\">Prepare for Account INSERT query failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 			}
 
 			/* Bind Parameters for INSERT new customer's Account details. */
-			if(!($stmt->bind_param("ii", $temp, $_POST['Open']))){
+			if (!($stmt->bind_param("ii", $temp, $_Open))) {
 				echo "<p class=\"error\">Bind failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 			}
 
 			/* Execute INSERT new customer's Account details. */
-			if(!$stmt->execute()){
+			if (!$stmt->execute()) {
 				echo "<p class=\"error\">Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error . "</p>";
 			}
 
 			/* UNLOCK tables. */
-			if(!$mysqli->query("UNLOCK TABLES")) {
+			if (!$mysqli->query("UNLOCK TABLES")) {
 				echo "<p class=\"error\">ERROR! Tables did not unlock following write: (" . $mysqli->errno . ")" . $mysqli->error . "</p>";
 			}
 
