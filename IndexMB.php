@@ -302,6 +302,6 @@
 		<br><br><br>
 
 	</div>
-	<?php include('../includes/TableHandler.php'); ?>
+
 </body>
 </html>
