@@ -1,6 +1,7 @@
 -- Moonbuyers Queries file MoonBuyers-queries.sql
 -- ******DO NOT IMPORT THIS FILE. FOR REFERENCE ONLY.********
--- Cut and paste queries to phpMyAdmin or CL as needed for testing.
+-- Cut and paste queries to phpMyAdmin or CL as needed for testing purposes.
+-- These are general queries - refactoring may be needed to achieve desired results.
 
 -- Select accoount details and balance for all accounts.
 SELECT A.id AS Account, A.Balance, Cu.id AS 'Cust_ID', Cu.Lname, Cu.Fname, Cu.Addr_1, Cu.Addr_2, Cu.City, Cu.State, Cu.Planet, Cu.Zip, Cu.Phone 
@@ -29,7 +30,7 @@ INNER JOIN Account A
 ON Cu.id = A.C_ID
 WHERE Cu.phone = 37275056243;
 
--- Record a Moonbuyers Transaction.
+-- Record a Moonbuyers Transaction. Note use of NOW() which isn't what would be used if 1000 years forward!
 LOCK TABLES Ledger WRITE, Contract WRITE, Contract_Asset WRITE, Contract_Customers WRITE, Asset WRITE;
 INSERT INTO Ledger(date_time) VALUES (NOW());
 SET @last_id_in_Ledger = LAST_INSERT_ID();
@@ -111,7 +112,7 @@ Zip = 505434,
 Phone = 549256547784
 WHERE Customers.id = 200004;
 
--- Record a Moonbuyers Transaction with full balance adjustments.
+-- Record a Moonbuyers Transaction with full balance adjustments. Note use of NOW() which isn't what would be used if 1000 years forward!
 LOCK TABLES Ledger WRITE, Contract WRITE, Contract_Asset WRITE, Contract_Customers WRITE, Asset WRITE, Account WRITE;
 INSERT INTO Ledger(date_time) VALUES (NOW());
 SET @last_id_in_Ledger = LAST_INSERT_ID();
@@ -141,14 +142,14 @@ UPDATE Account SET Balance = Balance + (51000.69 - 5100.00/2) WHERE id = 396407;
 UNLOCK TABLES;
 
 -- General Ledger query.
-SELECT L.id, L.date_time, CO.id, CO.Asset_ID, CO.Trans_at, CO.Com_pd, AST.Description, AST.Owned_By FROM Ledger L
+SELECT L.id, L.date_time, CO.id, CO.Asset_ID, CO.Trans_at, CO.Com_pd, AST.Name, AST.Owned_By FROM Ledger L
 INNER JOIN Contract CO ON CO.L_ID = L.id
 INNER JOIN Contract_Asset CA ON CA.Contract_ID = CO.id
 INNER JOIN Asset AST ON AST.id = CA.Asset_ID
 ORDER BY L.id ASC;
 
 -- Show Asset ID Ownership history, aka Ownership chain.
-SELECT L.id, L.date_time, CO.id as ID, CO.Asset_ID, CO.Trans_at, CO.Com_pd, AST.Description, AST.Owned_By
+SELECT L.id, L.date_time, CO.id as ID, CO.Asset_ID, CO.Trans_at, CO.Com_pd, AST.Name, AST.Owned_By
 FROM Ledger L
 INNER JOIN Contract CO ON CO.L_ID = L.id
 INNER JOIN Contract_Asset CA ON CA.Contract_ID = CO.id
