@@ -1,10 +1,11 @@
 <?php
 	//Turn on error reporting
-  ini_set('display_errors', 'On');
-  // Import dBase Credentials.
-  require('../../project/g3f2Kcd57nE4s25.php');
-  // Connect to the database.
-  $mysqli = new mysqli($servername, $username, $password, $database);
+	error_reporting(E_ALL);
+	ini_set('display_errors', 'On');
+	// Import dBase Credentials.
+	require('../../project/g3f2Kcd57nE4s25.php');
+	// Connect to the database.
+	$mysqli = new mysqli($servername, $username, $password, $database);
 	/* Date details for 1,000 years in the future per "mktime($hour,$minute,$second,$month,$day,$year)" */
 	$dateTime = new DateTime("NOW");
 	$day = $dateTime->format('d');
@@ -18,6 +19,7 @@
 <head>
 	<?php
 		include('../includes/HeadMB.php');
+		require('../includes/Sanitizer.php');
 	?>
 </head>
 
@@ -115,22 +117,41 @@
 				}
 
 				/*** 3. Make Ledger entry and retrieve ID. ***/
+				
 				// Prepare statement for INSERT new Ledger record.
-				if (!($stmt = $mysqli->query("INSERT INTO Ledger (date_time) VALUES(NOW())"))) {
+				if (!($stmt = $mysqli->prepare("INSERT INTO Ledger (date_time) VALUES(?)"))) {
 					echo "<p class=\"error\">Ledger INSERT timestamp query failed: "  . $stmt->errno . " " . $stmt->error . "</p>" ; 
 				}
+
+				// Bind Parameters for INSERT new Ledger record.
+				if (!($stmt->bind_param("s", $_POST['Eff_Date']))) {
+					echo "<p class=\"error\">Bind 3 failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
+				}
+
+				// Execute INSERT new Ledger details.
+				if (!$stmt->execute()){
+					echo "<p class=\"error\">Execute 3 failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error . "</p>";
+				}
+				
 				// Retrieve last insert ID which = new Ledger ID.
 				$temp = $mysqli->insert_id;
 				echo "<p class=\"success\">New Ledger ID = " . $temp . "</p>";
 
 				/*** 4. Record Contract details and retrieve new Contract record ID. ***/
+				
 				// Prepare statement for new Contract record.
 				if (!($stmt = $mysqli->prepare("INSERT INTO Contract (Asset_ID, B_Acct_ID, S_Acct_ID, Eff_Date, Trans_at, Com_pd, L_ID)
 									   VALUES(?,?,?,?,?,?,?)"))) {
 					echo "<p classs=\"error\">Prepare for Contract INSERT query failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 				}
+
+				// Sanitize via Sanitizer.php->Cleaner() class.
+				$cleaner = new Cleaner();
+				$trans_at = $cleaner->CleanDecimal($_POST['Trans_at']);
+				$com_pd = $cleaner->CleanDecimal($_POST['Com_pd']);
+
 				// Bind Parameters for INSERT new Contract details.
-				if (!($stmt->bind_param("iiisddi", $_POST['Asset_ID'], $_POST['B_Acct_ID'], $S_Acct_ID, $_POST['Eff_Date'], $_POST['Trans_at'], $_POST['Com_pd'], $temp))){
+				if (!($stmt->bind_param("iiisddi", $_POST['Asset_ID'], $_POST['B_Acct_ID'], $S_Acct_ID, $_POST['Eff_Date'], $trans_at, $com_pd, $temp))){
 					echo "<p class=\"error\">Bind 4 failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 				}
 				// Execute INSERT new Contract details.
@@ -160,9 +181,10 @@
 				}
 
 				/*** 6. Add Buyer's Contract_Customer junction table record. ***/
+				
 				// Prepare statement for Contract_Customers Buyer's record.
 				if (!($stmt = $mysqli->prepare("INSERT INTO Contract_Customers (Contract_ID, Customer_ID)
-																				VALUES(?,(SELECT C_ID FROM Account WHERE id = ?))"))) {
+												VALUES(?,(SELECT C_ID FROM Account WHERE id = ?))"))) {
 					echo "<p classs=\"error\">Prepare for Contract_Asset INSERT query failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 				}
 				// Bind Parameters for INSERT new Contract_Customer Buyer's record.
@@ -178,7 +200,7 @@
 
 				// Prepare statement for Contract_Customers Seller's record.
 				if (!($stmt = $mysqli->prepare("INSERT INTO Contract_Customers (Contract_ID, Customer_ID)
-																				VALUES(?,(SELECT C_ID FROM Account WHERE id = ?))"))) {
+												VALUES(?,(SELECT C_ID FROM Account WHERE id = ?))"))) {
 					echo "<p classs=\"error\">Prepare for Contract_Asset INSERT query failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 				}
 				// Bind Parameters for INSERT new Contract_Customer Seller's record.
@@ -234,7 +256,7 @@
 				$stmt->close();
 
 				// Calculate new Buyer's Account balance less transaction cost and 1/2 of the commission.
-				$B_Balance = $B_Balance - ($_POST['Trans_at'] + ($_POST['Com_pd'] / 2));
+				$B_Balance = $B_Balance - ($trans_at + ($com_pd / 2) );
 
 				// Prepare statement for UPDATE Buyer's Account Balance.
 				if (!($stmt = $mysqli->prepare("UPDATE Account SET Balance=? WHERE id=?"))) {
@@ -275,7 +297,7 @@
 				$stmt->close();
 
 				// Calculate new Seller's Account balance less transaction cost and 1/2 of the commission.
-				$S_Balance = $S_Balance + ($_POST['Trans_at'] - ($_POST['Com_pd'] / 2));
+				$S_Balance = $S_Balance + ($trans_at + ($com_pd / 2) );
 
 				// Prepare statement for UPDATE Seller's Account Balance.
 				if (!($stmt = $mysqli->prepare("UPDATE Account SET Balance=? WHERE id=?"))) {
