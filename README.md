@@ -34,9 +34,8 @@ _____
 [MoonBuyers-queries.sql](/SQL_Routines/MoonBuyers-queries.sql?ts=4)
 
 ##### How to use SQL files:
-[Loading Initial DataBase](../../../Docs/ImportExportMySQLDatabase.pdf)
+[Loading Initial DataBase](../../../Docs/blob/master/ImportExportMySQLDatabase.pdf)
 
-https://github.com/Rufian55/MoonBuyers/blob/Docs/ImportExportMySQLDatabase.pdf
 https://github.com/Rufian55/Docs/blob/master/ImportExportMySQLDatabase.pdf
 
 ##### public_html files:
