@@ -23,20 +23,23 @@ _____
 
 [Sanitizer.php](/includes/Sanitizer.php?ts=4)
 
-###### Images:
+##### Images:
 [favicon](/img/MBfavicon.ico)
 
-###### SQL:
+##### SQL:
 [MoonBuyers-definition.sql](/SQL_Routines/MoonBuyers-definition.sql?ts=4)
 
 [MoonBuyers-initialData.sql](/SQL_Routines/MoonBuyers-initialData.sql?ts=4)
 
 [MoonBuyers-queries.sql](/SQL_Routines/MoonBuyers-queries.sql?ts=4)
 
-###### How to use SQL files:
-[Loading Initial DataBase](../Docs/ImportExportMySQLDatabase.pdf)
+##### How to use SQL files:
+[Loading Initial DataBase](../../../Docs/ImportExportMySQLDatabase.pdf)
 
-###### public_html files:
+https://github.com/Rufian55/MoonBuyers/blob/Docs/ImportExportMySQLDatabase.pdf
+https://github.com/Rufian55/Docs/blob/master/ImportExportMySQLDatabase.pdf
+
+##### public_html files:
 [Add New Asset](AddNewAsset.php?ts=4)
 
 [Add New Customer](AddNewCustomer.php?ts=4)
