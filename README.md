@@ -2,16 +2,17 @@
 
 ### A PHP MySQL demonstration application that manages the buying and selling of various extra-planetary bodies in an "internal business app" setting.
 
+>MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. This repository includes everything you need to set up and start working your own project. Project utilizes multiple tables, complex queries, junction tables, full error reporting, and some bootstrap - responsive layout with a bit of animation.  Note: ALL date fields throughout the demo are set 1,000 years in the future.
+
 ##### The demo is currently restricted to Sol System, however, feel free to add extra-solar entities... :warning: :astonished: :artificial_satellite: :flying_saucer: :rocket: :ringed_planet:
 
 Visit and test [MoonBuyers InterGalactic](https://ChristopherKearns.com/MB/IndexMB.php).
 
 See [HeadMB.php](/includes/HeadMB.php) and [JsIncludes.php](/includes/JsIncludes.php) for dependencies you'll need to consider downloading!
 
->MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. This repository includes everything you need to set up and start working your own project. Project utilizes multiple tables, complex queries, junction tables, full error reporting, and some bootstrap - responsive layout with a bit of animation.  Note: ALL date fields throughout the demo are set 1,000 years in the future.
 _____
 
-#### Links to all files with corrected tab spacing (or append '?ts=4' to url).
+#### Links to all files with corrected tab spacing (or append '?ts=4' OR '?ts=2' to url in your browser).
 
 ##### Styles:
 [style.css](/css/style.css?ts=4)
@@ -31,7 +32,7 @@ _____
 
 [MoonBuyers-initialData.sql](/SQL_Routines/MoonBuyers-initialData.sql?ts=4)
 
-[MoonBuyers-queries.sql](/SQL_Routines/MoonBuyers-queries.sql?ts=4)
+[MoonBuyers-queries.sql (read only - Do Not Import!)](/SQL_Routines/MoonBuyers-queries.sql?ts=4)
 
 ##### How to use SQL files:
 [Loading Initial DataBase](../../../Docs/blob/master/ImportExportMySQLDatabase.pdf)
