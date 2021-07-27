@@ -8,7 +8,7 @@ Visit and test [MoonBuyers InterGalactic](https://ChristopherKearns.com/MB/Index
 
 See [HeadMB.php](/includes/HeadMB.php) and [JsIncludes.php](/includes/JsIncludes.php) for dependencies you'll need to consider downloading!
 
->MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. This repository includes everything you need to set up and start working your own project. Project utilizes multiple tables, complex queries, junction tables, full error reporting, and some basic bootstrap - responsive layout with a bit of animation.  Note: ALL date fields throughout the demo are set 1,000 years in the future.
+>MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. This repository includes everything you need to set up and start working your own project. Project utilizes multiple tables, complex queries, junction tables, full error reporting, and some bootstrap - responsive layout with a bit of animation.  Note: ALL date fields throughout the demo are set 1,000 years in the future.
 _____
 
 #### Links to all files with corrected tab spacing (or append '?ts=4' to url).
@@ -36,8 +36,6 @@ _____
 ##### How to use SQL files:
 [Loading Initial DataBase](../../../Docs/blob/master/ImportExportMySQLDatabase.pdf)
 
-https://github.com/Rufian55/Docs/blob/master/ImportExportMySQLDatabase.pdf
-
 ##### public_html files:
 [Add New Asset](AddNewAsset.php?ts=4)
 
@@ -51,24 +49,24 @@ https://github.com/Rufian55/Docs/blob/master/ImportExportMySQLDatabase.pdf
 
 [Show All Accounts](ShowAccount.php?ts=4)
 
-[Show Accountt By Customer ID](ShowAcctByCID.php?ts=4)
+[Show Account By Customer ID](ShowAcctByCID.php?ts=4)
 
-[Show Account By Account ID](ShowAcctByID.php?ts=4)
+[Show Account By Account ID](ShowAcctByID.php?ts=2)
 
-[Show Account By Customer Phone](ShowAcctByPhone.php?ts=4)
+[Show Account By Customer Phone](ShowAcctByPhone.php?ts=2)
 
-[Show All Assets](ShowAllAssets.php?ts=4)
+[Show All Assets](ShowAllAssets.php?ts=2)
 
-[Show Assets By Account ID](ShowAssetByAccID.php?ts=4)
+[Show Assets By Account ID](ShowAssetByAccID.php?ts=2)
 
-[Show Asset By Asset ID](ShowAssetByID.php?ts=4)
+[Show Asset By Asset ID](ShowAssetByID.php?ts=2)
 
-[Show Ledger](ShowLedger.php?ts=4)
+[Show Ledger](ShowLedger.php?ts=2)
 
-[Show Asset Ownership Chain By Asset ID](ShowLedgerByID.php?ts=4)
+[Show Asset Ownership Chain By Asset ID](ShowLedgerByID.php?ts=2)
 
-[Show Total Commissions Paid by Date Range](ShowTCPaid.php?ts=4)
+[Show Total Commissions Paid by Date Range](ShowTCPaid.php?ts=2)
 
-[Update Account Balance](UpdateAccBalance.php?ts=4)
+[Update Account Balance](UpdateAccBalance.php?ts=2)
 
-[Update Customer Details](UpdateCustomer.php?ts=4)
+[Update Customer Details](UpdateCustomer.php?ts=2)
