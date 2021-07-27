@@ -108,6 +108,7 @@ Addr_1 = 'C-Ring',
 Addr_2 = 'Apogee Point 54',
 City = 'Orbital I',
 State = 'SA',
+Planet = 'Saturn',
 Zip = 505434,
 Phone = 549256547784
 WHERE Customers.id = 200004;

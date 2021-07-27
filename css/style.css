@@ -2,7 +2,7 @@
 @charset "utf-8";
 
 :root {
-	--background-color:  #deffde; /* Soft blue mint */
+	--background-color:  #deffde; /* Soft mint */
 }
 
 body {
@@ -155,7 +155,7 @@ button:hover{
   }
 }
 
-/* Animated Scroller  */
+/* Animated Chevron Scroller  */
 
 .scroll-container {
   position: relative;
@@ -232,4 +232,4 @@ button:hover{
   }
 }
 
-/* End Animated Scroller */
+/* End Animated Chevron Scroller */

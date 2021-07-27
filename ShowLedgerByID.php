@@ -25,7 +25,7 @@
 			<thead>
 				<tr class="success">
 					<th class="text-center bold">Ledger ID</th>
-					<th class="text-center bold">Date &amp; Time</th>
+					<th class="text-center bold"><span class="span-hide">__</span>Date<span class="span-hide">__</span></th>
 					<th class="text-center bold">Contract ID</th>
 					<th class="text-center bold">Asset ID</th>
 					<th class="text-center bold">Amount</th>

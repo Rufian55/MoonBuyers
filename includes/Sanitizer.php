@@ -1,15 +1,16 @@
 <?php
-	/**************************************************************************
+	/***************************************************************************************
 	* Sanitizer.php defines Cleaner class - a set of faux type specific
-	* methods to agrressively sanitize user input.
+	* methods to aggressively sanitize user input.
 	* Usage:
 	*	'require Sanitize.php;' in <head>
 	*	'$cleaner = new Cleaner();'
 	*	'$theInt2bTested = $cleaner->CleanInt($theInt2bTested);' or
 	*	'$theDecimal2bTested = $cleaner->CleanDecimal($theDecimal2bTested);' or
 	*	'$theString2bTested = $cleaner->CleanString($theString2bTested);' or
+	* 	'$theStateString2bTested = $cleaner->CleanStateString($theStateString2bTested);' or
 	* 	'$theDate2bTested = $cleaner->CleanDate($theDate2bTested);'
-	***************************************************************************/
+	****************************************************************************************/
 	class Cleaner {
 	 
 	 	// Removes everything that is not an integer.

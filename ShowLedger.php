@@ -25,7 +25,7 @@
 				<thead>
 					<tr class="success">
 						<td class="bold">Ledger ID</td>
-						<td class="bold">Date &amp; Time</td>
+						<td class="bold"><span class="span-hide">__</span>Date<span class="span-hide">__</span></td>
 						<td class="bold">Contract ID</td>
 						<td class="bold">Asset ID</td>
 						<td class="bold">Amount</td>

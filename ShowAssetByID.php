@@ -29,8 +29,8 @@
 					<th class="text-center bold">Value</th>
 					<th class="text-center bold">Account ID</th>
 					<th class="text-center bold">Effective Date</th>
-					<th class="text-center bold">Last Name</th>
-					<th class="text-center bold">First Name</th>
+					<th class="text-center bold">Form</th>
+					<th class="text-center bold">Company Name</th>
 				</tr>
 			</thead>
 			<tbody>
