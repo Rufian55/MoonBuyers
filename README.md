@@ -1,16 +1,35 @@
-# MoonBuyers
+# MoonBuyers InterGalactic
 
-### A PHP MySQL demo application to manage the buying and selling of various extra-planetary bodies.
+#### A PHP MySQL demo application to manage the buying and selling of various extra-planetary bodies.
 
-#### These activities are retricted to Sol System.
+##### These activities are restricted to Sol System.
 
-Visit and test [MoonBuyers InterGalactic](https://christopherKearns.com/MB.IndexMB.php/).
+Visit and test [MoonBuyers InterGalactic](https://christopherKearns.com/MB/IndexMB.php/).
 
-See HeadMB.php and TableHandler.php for dependencies!
+See [HeadMB.php](/includes/HeadMB.php) and [JsIncludes.php](/includes/JsIncludes.php) for dependencies you'll need to consider downloading!
 
-## Links to all files with corrected tab spacing.
+MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. This repository includes everything you need to set up and start working your own project. Project utilizes multiple tables, complex queries, junction tables, full error reporting, and some basic bootstrap - responsive layout with a bit of animation...
 
+#### Links to all files with corrected tab spacing.
+
+##### Styles:
 [style.css](/css/style.css?ts=4)
 
+##### Includes:
+[HeadMB.php](/includes/HeadMB.php?ts=4)
+[JsIncludes.php](/includes/JsIncludes.php?ts=4)
+[Sanitizer.php](/includes/Sanitizer.php?ts=4)
 
+###### Images:
+[favicon]
+
+
+###### SQL:
+
+
+###### How to use SQL files:
+
+
+
+###### public_html files:
 
