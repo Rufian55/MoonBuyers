@@ -8,9 +8,10 @@ Visit and test [MoonBuyers InterGalactic](https://ChristopherKearns.com/MB/Index
 
 See [HeadMB.php](/includes/HeadMB.php) and [JsIncludes.php](/includes/JsIncludes.php) for dependencies you'll need to consider downloading!
 
-MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. This repository includes everything you need to set up and start working your own project. Project utilizes multiple tables, complex queries, junction tables, full error reporting, and some basic bootstrap - responsive layout with a bit of animation...
+>MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. This repository includes everything you need to set up and start working your own project. Project utilizes multiple tables, complex queries, junction tables, full error reporting, and some basic bootstrap - responsive layout with a bit of animation.  Note: ALL date fields throughout the demo are set 1,000 years in the future.
+_____
 
-#### Links to all files with corrected tab spacing.
+#### Links to all files with corrected tab spacing (or append '?ts=4' to url).
 
 ##### Styles:
 [style.css](/css/style.css?ts=4)
@@ -26,13 +27,46 @@ MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. T
 [favicon](/img/MBfavicon.ico)
 
 ###### SQL:
-[MoonBuyers-definition.sql](/SQL_Routines/MoonBuyers-definition.sql).
-[MoonBuyers-initialData.sql](/SQL_Routines/MoonBuyers-initialData.sql).
-[MoonBuyers-queries.sql](/SQL_Routines/MoonBuyers-queries.sql).
+[MoonBuyers-definition.sql](/SQL_Routines/MoonBuyers-definition.sql?ts=4)
+
+[MoonBuyers-initialData.sql](/SQL_Routines/MoonBuyers-initialData.sql?ts=4)
+
+[MoonBuyers-queries.sql](/SQL_Routines/MoonBuyers-queries.sql?ts=4)
 
 ###### How to use SQL files:
-
-
+[Loading Initial DataBase](../Docs/ImportExportMySQLDatabase.pdf)
 
 ###### public_html files:
+[Add New Asset](AddNewAsset.php?ts=4)
 
+[Add New Customer](AddNewCustomer.php?ts=4)
+
+[Edit Asset](EditAsset.php?ts=4)
+
+[Main Page](IndexMB.php?ts=4)
+
+[Record a Transaction](RecordTrans.php?ts=4)
+
+[Show All Accounts](ShowAccount.php?ts=4)
+
+[Show Accountt By Customer ID](ShowAcctByCID.php?ts=4)
+
+[Show Account By Account ID](ShowAcctByID.php?ts=4)
+
+[Show Account By Customer Phone](ShowAcctByPhone.php?ts=4)
+
+[Show All Assets](ShowAllAssets.php?ts=4)
+
+[Show Assets By Account ID](ShowAssetByAccID.php?ts=4)
+
+[Show Asset By Asset ID](ShowAssetByID.php?ts=4)
+
+[Show Ledger](ShowLedger.php?ts=4)
+
+[Show Asset Ownership Chain By Asset ID](ShowLedgerByID.php?ts=4)
+
+[Show Total Commissions Paid by Date Range](ShowTCPaid.php?ts=4)
+
+[Update Account Balance](UpdateAccBalance.php?ts=4)
+
+[Update Customer Details](UpdateCustomer.php?ts=4)
