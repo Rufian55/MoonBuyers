@@ -10,9 +10,7 @@ See HeadMB.php and TableHandler.php for dependencies!
 
 ## Links to all files with corrected tab spacing.
 
-[style.css](/css/style.css&ts=4)
+[style.css](/css/style.css?ts=4)
 
-https://github.com/Rufian55/MoonBuyers/blob/main/css/style.css
 
-https://github.com/Rufian55/MoonBuyers
 
