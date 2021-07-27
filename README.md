@@ -1,8 +1,8 @@
 # MoonBuyers InterGalactic
 
-#### A PHP MySQL demo application to manage the buying and selling of various extra-planetary bodies.
+### A PHP MySQL demo application to manage the buying and selling of various extra-planetary bodies.
 
-##### These activities are restricted to Sol System.
+##### The demo is currently restricted to Sol System, however, feel free to add extra-solar entities... :warning: :astonished: :artificial_satellite: :flying_saucer: :rocket: :ringed_planet:
 
 Visit and test [MoonBuyers InterGalactic](https://christopherKearns.com/MB/IndexMB.php/).
 
