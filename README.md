@@ -23,11 +23,12 @@ MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. T
 [Sanitizer.php](/includes/Sanitizer.php?ts=4)
 
 ###### Images:
-[favicon]
-
+[favicon](/img/MBfavicon.ico)
 
 ###### SQL:
-
+[MoonBuyers-definition.sql](/SQL_Routines/MoonBuyers-definition.sql).
+[MoonBuyers-initialData.sql](/SQL_Routines/MoonBuyers-initialData.sql).
+[MoonBuyers-queries.sql](/SQL_Routines/MoonBuyers-queries.sql).
 
 ###### How to use SQL files:
 
