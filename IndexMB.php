@@ -96,7 +96,7 @@
 				$stmt->close();
 				?>
 			</select>
-			<input type="submit" value="Show Account By This Cutomer ID" id="button"/>
+			<input type="submit" value="Show Account By This Customer ID" id="button"/>
 		</form>
 
 		<br>
