@@ -29,13 +29,8 @@
 	
 	<div class="row">
 		<div class="col-md-2"></div>
-        <div class="col-md-2">
-	       	<div class="scroll-container col-centered">
-  				<div class="chevron"></div>
-  				<div class="chevron"></div>
-  				<div class="chevron"></div>
-  			</div>
-        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-md-2">
@@ -45,7 +40,7 @@
         		<div class="chevron"></div>
         	</div>
         </div>
-		<div class="col-md-2"></div>
+		
     </div>
 	
 	<div>
