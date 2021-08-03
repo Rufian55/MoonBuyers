@@ -93,8 +93,15 @@
 				$_apMag = $cleaner->CleanDecimal($_POST['ApMag']);
 				$_cDate = $cleaner->CleanDate($_POST['cDate']);
 
+				if (empty(trim($_POST['Owned_By']))) {
+					$Owned_By = $idFromPostData;
+				}
+				else {
+					$Owned_By = $_POST['Owned_By'];
+				}
+
 				/* Bind Parameters for INSERT new Asset's details. */
-				if(!($stmt->bind_param("ssdddsi", $_name, $_descr, $_radius, $_mass, $_apMag, $_cDate, $_POST['Owned_By']))) {
+				if(!($stmt->bind_param("ssdddsi", $_name, $_descr, $_radius, $_mass, $_apMag, $_cDate, $Owned_By))) {
 					echo "<p class=\"error\">Bind failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 				}
 
