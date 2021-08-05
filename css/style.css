@@ -2,16 +2,20 @@
 @charset "utf-8";
 
 :root {
-	--background-color:  #deffde; /* Soft mint */
+	--background-color:  #000000;/*#deffde;  Soft mint */
 }
 
 body {
 	background-color: var(--background-color);
 }
 
+p {
+	color: #00ff00;
+}
+
 h1 {
 	text-align:center;
-	color:#000000;		/* Black */
+	color: #F00000;		/* Black */
 }
 
 h2 {
@@ -19,14 +23,23 @@ h2 {
 	color:#006400;		/* Dark Green */
 }
 
+h2 .colorRed {
+	color:#ff0000;		/* Red */
+}
+
 h3 {
 	text-align:center;
 	color:#db1ed1;		/* Light Purple */
 }
 
+h4 {
+	text-align:center;
+	color:#db7522;		/* Lighter Purple */
+}
+
 h5 {
 	text-align:center;
-	color:#db0022;		/* Light Purple */
+	color:#db0022;		/* Lightest Purple */
 }
 
 /* Horizontal Seperator. */
@@ -39,6 +52,7 @@ h5 {
 }
 
 .bold {
+	background-color: #00dd00;
 	color:	#0000bb;
 	font-weight:	bold;
 	font-size:	16px;
@@ -57,6 +71,25 @@ h5 {
 .table {
 	margin: auto;
 	max-width: 60%;
+	background-color: #000000; 
+} 
+
+td {
+	color: #00ff00;
+}
+
+select {
+  background: #000000;
+  color: #00ee00;
+}
+
+input[type="date"] { 
+  background: transparent;
+  color: #00ff00;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
 }
 
 /* Table hover, not body background! */
@@ -65,7 +98,7 @@ h5 {
 }
 
 span.span-hide {
-	color: #dff0d8; /* Bootstrap 3 'success' [docs are wrong!!]. */
+	color: #00dd00; /* Hides the underscore _ seperator to force td node width. */
 }
 
 div {
@@ -111,7 +144,6 @@ button:hover{
 #button:hover{background:#FF0000;}
 
 
-
 /* For submit buttons on combination form/php pages. */
 #submit {
 	height: 30px;
@@ -148,6 +180,13 @@ button:hover{
 	max-height:725px;
 }
 
+/* Overrides for Form Input */
+.form-control {
+	background-color: #000000;
+	color: #ffffff;
+}
+/* End Overrides for Form Input */
+
 /* For screens < 900px width, lengthen the <hr> seperators. */
 @media only screen and (max-width: 900px) {
   .hr-all {
@@ -155,13 +194,13 @@ button:hover{
   }
 }
 
-/* Animated Chevron Scroller  */
+
+/* Begin Animated Chevron Scroller  */
 
 .scroll-container {
   position: relative;
   width: 24px;
   height: 24px;
-  /*bottom: 77px;*/
 }
 
 .col-centered {
