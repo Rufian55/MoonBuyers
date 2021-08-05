@@ -33,13 +33,13 @@
 				<h4>Select Asset ID</h4>
 				<select name="Asset_ID">
 					<?php
-						if (!($stmt = $mysqli->prepare("SELECT id/*, Owned_By*/ FROM Asset ORDER BY id ASC"))) {
+						if (!($stmt = $mysqli->prepare("SELECT id FROM Asset ORDER BY id ASC"))) {
 							echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 						}
 						if (!$stmt->execute()) {
 							echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 						}
-						if (!$stmt->bind_result($id/*, $Owned_By*/)) {
+						if (!$stmt->bind_result($id)) {
 							echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 						}
 						while($stmt->fetch()) {
@@ -284,7 +284,7 @@
 				if (!($stmt->bind_param("i", $S_Acct_ID))) {
 					echo "<p class=\"error\">Bind_param 10 failed: "  . $stmt->errno . " " . $stmt->error . "</p>";
 				}
-		  	if (!$stmt->execute()) {
+		  		if (!$stmt->execute()) {
 					echo "Execute 10 failed: " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 				}
 				if (!$stmt->bind_result($Balance)) {
