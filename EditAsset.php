@@ -39,7 +39,7 @@
 		<h3>Orginal Asset Details</h3>
 		<table class="table table-hover table-bordered">
 			<thead>
-				<tr class="success">
+				<tr>
 					<th class="text-center bold">Asset ID</th>
 					<th class="text-center bold">Name</th>
           			<th class="text-center bold">Description</th>
