@@ -24,7 +24,7 @@
 		<!-- Note inline stle override - force table width and centering! Noop from style.css -->
 		<table class="table table-hover table-bordered" style="width: 35%; margin-left: auto; margin-right: auto;">
 			<thead>
-				<tr class="success">
+				<tr>
 					<th class="text-center bold">Contracted</th>
 					<th class="text-center bold">Total Commissions</th>
 				</tr>

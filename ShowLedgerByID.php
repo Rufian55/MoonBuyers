@@ -23,7 +23,7 @@
 		<h3>Confidential</h3>
 		<table class="table table-hover table-bordered">
 			<thead>
-				<tr class="success">
+				<tr>
 					<th class="text-center bold">Ledger ID</th>
 					<th class="text-center bold"><span class="span-hide">__</span>Date<span class="span-hide">__</span></th>
 					<th class="text-center bold">Contract ID</th>

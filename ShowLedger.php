@@ -21,9 +21,9 @@
 	<h2>Show General Ledger</h2>
 	<div class="container">
 		<h3>Confidential</h3>
-			<table class="table table-striped table-hover table-bordered">
+			<table class="table table-hover table-bordered">
 				<thead>
-					<tr class="success">
+					<tr>
 						<td class="bold">Ledger ID</td>
 						<td class="bold"><span class="span-hide">__</span>Date<span class="span-hide">__</span></td>
 						<td class="bold">Contract ID</td>

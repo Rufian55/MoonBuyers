@@ -21,9 +21,9 @@
 	<h2>Show All Assets</h2>
 	<div class="container">
 		<h3>Confidential</h3>
-		<table class="table table-striped table-hover table-bordered">
+		<table class="table table-hover table-bordered">
 			<thead>
-				<tr class="success">
+				<tr>
 					<th class="text-center bold">Asset ID</th>
 					<th class="text-center bold">Name</th>
 					<th class="text-center bold">Description</th>

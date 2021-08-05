@@ -21,9 +21,9 @@
 	<h2>Show All Accounts</h2>
 	<div class="container">
 		<h3>Confidential</h3>
-		<table class="table table-striped table-hover table-bordered">
+		<table class="table table-hover table-bordered">
 			<thead>
-				<tr class="success">
+				<tr>
 					<th class="text-center bold">Account</th>
 					<th class="text-center bold">Balance</th>
 					<th class="text-center bold">Customer ID</th>
