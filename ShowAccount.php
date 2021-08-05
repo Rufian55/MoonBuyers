@@ -27,15 +27,15 @@
 					<th class="text-center bold">Account</th>
 					<th class="text-center bold">Balance</th>
 					<th class="text-center bold">Customer ID</th>
-          <th class="text-center bold">Form</th>
-          <th class="text-center bold">Company Name</th>
-          <th class="text-center bold">Address<span class="span-hide">_</span>1</th>
-          <th class="text-center bold">Address<span class="span-hide">_</span>2</th>
-          <th class="text-center bold">City</th>
-          <th class="text-center bold">State</th>
-          <th class="text-center bold">Planet</th>
-          <th class="text-center bold">Zip</th>
-          <th class="text-center bold">Phone</th>
+					<th class="text-center bold">Form</th>
+					<th class="text-center bold">Company Name</th>
+					<th class="text-center bold">Address<span class="span-hide">_</span>1</th>
+					<th class="text-center bold">Address<span class="span-hide">_</span>2</th>
+					<th class="text-center bold">City</th>
+					<th class="text-center bold">State</th>
+					<th class="text-center bold">Planet</th>
+					<th class="text-center bold">Zip</th>
+					<th class="text-center bold">Phone</th>
 				</tr>
 			</thead>
 			<tbody>
