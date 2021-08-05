@@ -39,7 +39,7 @@
 		<h3>Current Confidential Customer Details</h3>
 		<table class="table table-hover table-bordered">
 			<thead>
-				<tr class="success">
+				<tr>
 					<th class="text-center bold">Customer ID</th>
 					<th class="text-center bold">Form</th>
 					<th class="text-center bold">Company Name</th>
