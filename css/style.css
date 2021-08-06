@@ -1,8 +1,9 @@
 /* CSS Document for MoonBuyers Intergalactic. */
+
 @charset "utf-8";
 
 :root {
-	--background-color:  #000000;/*#deffde;  Soft mint */
+	--background-color:  #000000; /* Black */
 }
 
 body {
@@ -15,7 +16,7 @@ p {
 
 h1 {
 	text-align:center;
-	color: #F00000;		/* Black */
+	color: #F00000;		/* Red */
 }
 
 h2 {
@@ -34,7 +35,7 @@ h3 {
 
 h4 {
 	text-align:center;
-	color:#db7522;		/* Lighter Purple */
+	color:#db7522;		/* Orange */
 }
 
 h5 {
@@ -71,7 +72,7 @@ h5 {
 .table {
 	margin: auto;
 	max-width: 60%;
-	background-color: #000000; 
+	background-color: #000000;
 } 
 
 td {
@@ -106,18 +107,18 @@ div {
 }
 
 a:link, a:visited {
-	color:#3300FF;
+	color: #3300FF;
 	font-size: 20px;
 }
 
 a:hover {
-	color:#FF0000;
+	color: #FF0000;
 }
 
 /* For return to main page buttons on each query result page. */
 button {
 	height: 30px;
-	width:auto
+	width:auto;
 	border-radius: 5px;
 	font-size: 13px;
 	background-color: #2994FF;
@@ -125,7 +126,7 @@ button {
 }
 
 button:hover{
-	background:#FF0000;
+	background: #FF0000;
 }
 
 .form-group {
@@ -147,7 +148,7 @@ button:hover{
 /* For submit buttons on combination form/php pages. */
 #submit {
 	height: 30px;
-	width:auto
+	width: auto;
 	border-radius: 5px;
 	font-size: 13px;
 	background-color: #2994FF;
@@ -158,26 +159,26 @@ button:hover{
 	background:#FF0000;
 }
 
-/* Styling for error messages. */
+/* Styling for sucsess messages override. */
 .success {
-	text-align:center;
-	font:Arial, Helvetica, sans-serif;
-	font-size:18px;
-	color:#009900;
+	text-align: center;
+	font: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #009900;
 }
 
-/* Styling for success messages. */
+/* Styling for error messages override. */
 .error {
 	text-align:center;
-	font:Arial, Helvetica, sans-serif;
+	font: Arial, Helvetica, sans-serif;
 	font-size:18px;
 	color:#FF0000;
 }
 
 .overflow {
-	overflow-y:auto;
-	height:725px;
-	max-height:725px;
+	overflow-y: auto;
+	height: 725px;
+	max-height: 725px;
 }
 
 /* Overrides for Form Input */
@@ -190,7 +191,7 @@ button:hover{
 /* For screens < 900px width, lengthen the <hr> seperators. */
 @media only screen and (max-width: 900px) {
   .hr-all {
-  	margin: auto 0px;
+  	margin: auto 2px;
   }
 }
 
