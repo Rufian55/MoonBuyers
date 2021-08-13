@@ -1,5 +1,5 @@
 # MoonBuyers InterGalactic
-
+A PHP/MySQL Demonstration Project
 ### A PHP MySQL demonstration application that manages the buying and selling of various extra-planetary bodies in an "internal business app" setting.
 
 >MoonBuyers InterGalactic is a PHP MySQL demonstration project by Chris Kearns. This repository includes everything you need to set up and start working your own project. Project utilizes multiple tables, complex queries, junction tables, full error reporting, aggressive user input sanitization, bootstrap - responsive layout with a bit of animation, and a pinch of JQuery.  Note: ALL date fields throughout the demo are set 1,000 years in the future.
