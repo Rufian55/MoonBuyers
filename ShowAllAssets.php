@@ -1,4 +1,8 @@
 <?php
+	// Login Credentials required.
+	require('../includes/ProtectMB.php');
+	// Destroy session at time limit.
+	require('../includes/SessionExpire.php');
   //Turn on error reporting
   ini_set('display_errors', 'On');
   // Import dBase Credentials.
