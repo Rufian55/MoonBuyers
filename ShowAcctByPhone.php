@@ -1,4 +1,8 @@
 <?php
+	// Login Credentials required.
+	require('../includes/ProtectMB.php');
+	// Destroy session at time limit.
+	require('../includes/SessionExpire.php');
   //Turn on error reporting
   ini_set('display_errors', 'On');
   // Import dBase Credentials.
@@ -18,7 +22,7 @@
 
 <body>
 	<h1>MoonBuyers InterGalactic</h1>
-	<h2>Show Account By Customer ID</h2>
+	<h2>Show Account By Customer Phone</h2>
 	<div class="container">
 		<h3>Confidential</h3>
 		<table class="table table-hover table-bordered">
